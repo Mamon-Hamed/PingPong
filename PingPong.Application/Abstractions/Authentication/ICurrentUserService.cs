@@ -1,0 +1,9 @@
+namespace PingPong.Application.Abstractions.Authentication;
+
+public interface ICurrentUserService
+{
+    string? UserId { get; }
+    string? Email { get; }
+    bool IsAuthenticated { get; }
+    bool IsInRole(string role);
+}
