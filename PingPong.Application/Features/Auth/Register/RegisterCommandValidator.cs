@@ -1,4 +1,5 @@
 using FluentValidation;
+using PingPong.Domain.Constants;
 
 namespace PingPong.Application.Features.Auth.Register;
 
@@ -8,16 +9,16 @@ public sealed class RegisterCommandValidator : AbstractValidator<RegisterCommand
     {
         RuleFor(x => x.FirstName)
             .NotEmpty().WithMessage("First name is required.")
-            .MaximumLength(100);
+            .MaximumLength(StringLengths.Length128);
 
         RuleFor(x => x.LastName)
             .NotEmpty().WithMessage("Last name is required.")
-            .MaximumLength(100);
+            .MaximumLength(StringLengths.Length128);
 
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email is required.")
             .EmailAddress().WithMessage("Invalid email format.")
-            .MaximumLength(256);
+            .MaximumLength(StringLengths.Length256);
 
         RuleFor(x => x.Password)
             .NotEmpty().WithMessage("Password is required.")

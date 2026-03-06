@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PingPong.Domain.Constants;
 using PingPong.Domain.Entities;
 
 namespace PingPong.Infrastructure.Persistence.Configurations;
@@ -11,15 +12,15 @@ public sealed class PlayerConfiguration : BaseEntityConfiguration<Player, Player
         builder.ToTable("Players");
 
         builder.Property(p => p.FirstName)
-            .HasMaxLength(100)
+            .HasMaxLength(StringLengths.Length128)
             .IsRequired();
 
         builder.Property(p => p.LastName)
-            .HasMaxLength(100)
+            .HasMaxLength(StringLengths.Length128)
             .IsRequired();
 
         builder.Property(p => p.Email)
-            .HasMaxLength(256)
+            .HasMaxLength(StringLengths.Length256)
             .IsRequired();
 
         builder.HasIndex(p => p.Email)

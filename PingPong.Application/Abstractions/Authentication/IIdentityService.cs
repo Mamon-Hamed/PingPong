@@ -7,4 +7,8 @@ public interface IIdentityService
 
     Task<(bool Succeeded, string UserId, string Email, IList<string> Roles)> ValidateCredentialsAsync(
         string email, string password);
+
+    Task<bool> ValidateRefreshTokenAsync(string userId, string refreshToken);
+
+    Task UpdateRefreshTokenAsync(string userId, string newRefreshToken, DateTime expiresAtUtc);
 }

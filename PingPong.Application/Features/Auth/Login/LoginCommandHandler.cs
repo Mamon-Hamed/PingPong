@@ -19,6 +19,8 @@ public sealed class LoginCommandHandler(
 
         var token = await tokenService.GenerateTokenAsync(userId, email, roles, cancellationToken);
 
+        await identityService.UpdateRefreshTokenAsync(userId, token.RefreshToken, token.ExpiresAtUtc.AddDays(7)); // Or use config for expiry
+
         var response = new LoginResponse(token.AccessToken, token.RefreshToken, token.ExpiresAtUtc);
 
         return Result.Success(response);
