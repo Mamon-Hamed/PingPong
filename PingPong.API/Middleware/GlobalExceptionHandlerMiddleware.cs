@@ -5,27 +5,20 @@ using ValidationException = PingPong.Domain.Exceptions.ValidationException;
 
 namespace PingPong.API.Middleware;
 
-public sealed class GlobalExceptionHandlerMiddleware
+public sealed class GlobalExceptionHandlerMiddleware(
+    RequestDelegate next,
+    ILogger<GlobalExceptionHandlerMiddleware> logger)
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<GlobalExceptionHandlerMiddleware> _logger;
-
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase
     };
 
-    public GlobalExceptionHandlerMiddleware(RequestDelegate next, ILogger<GlobalExceptionHandlerMiddleware> logger)
-    {
-        _next = next;
-        _logger = logger;
-    }
-
     public async Task InvokeAsync(HttpContext httpContext)
     {
         try
         {
-            await _next(httpContext);
+            await next(httpContext);
         }
         catch (Exception ex)
         {
@@ -67,17 +60,18 @@ public sealed class GlobalExceptionHandlerMiddleware
             ),
             _ => (
                 StatusCodes.Status500InternalServerError,
-                ApiResponse.Fail(500, "An unexpected error occurred. Please try again later.")
+                // ApiResponse.Fail(500, "An unexpected error occurred. Please try again later.")
+                ApiResponse.Fail(500, exception.Message + exception.InnerException?.Message)
             )
         };
 
         if (statusCode == StatusCodes.Status500InternalServerError)
         {
-            _logger.LogError(exception, "Unhandled exception occurred: {Message}", exception.Message);
+            logger.LogError(exception, "Unhandled exception occurred: {Message}", exception.Message);
         }
         else
         {
-            _logger.LogWarning(exception, "Handled exception: {ExceptionType} - {Message}",
+            logger.LogWarning(exception, "Handled exception: {ExceptionType} - {Message}",
                 exception.GetType().Name, exception.Message);
         }
 

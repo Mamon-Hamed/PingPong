@@ -1,4 +1,4 @@
-using MediatR;
+using Cortex.Mediator.Notifications;
 using PingPong.Domain.Primitives;
 
 namespace PingPong.Application.Abstractions.Messaging;

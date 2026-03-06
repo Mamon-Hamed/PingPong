@@ -1,7 +1,7 @@
-using MediatR;
+using PingPong.Application.Common;
 
 namespace PingPong.Application.Abstractions.Messaging;
 
-public interface ICommand : IRequest<Result>;
+public interface ICommand :  Cortex.Mediator.Commands.ICommand<Result>;
 
-public interface ICommand<TResponse> : IRequest<Result<TResponse>>;
+public interface ICommand<TResponse> : Cortex.Mediator.Commands.ICommand<Result<TResponse>>;

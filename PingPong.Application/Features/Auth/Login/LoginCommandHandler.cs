@@ -1,10 +1,11 @@
 using PingPong.Application.Abstractions.Authentication;
 using PingPong.Application.Abstractions.Messaging;
+using PingPong.Application.Common;
 using PingPong.Domain.Exceptions;
 
-namespace PingPong.Application.Auth.Login;
+namespace PingPong.Application.Features.Auth.Login;
 
-internal sealed class LoginCommandHandler(
+public sealed class LoginCommandHandler(
     IIdentityService identityService,
     ITokenService tokenService) : ICommandHandler<LoginCommand, LoginResponse>
 {

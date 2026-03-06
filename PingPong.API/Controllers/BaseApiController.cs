@@ -1,4 +1,4 @@
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.AspNetCore.Mvc;
 using PingPong.Application;
 using PingPong.Application.Common;
@@ -9,10 +9,10 @@ namespace PingPong.API.Controllers;
 [Route("api/[controller]")]
 public abstract class BaseApiController : ControllerBase
 {
-    private ISender? _mediator;
+    private IMediator? _mediator;
 
-    protected ISender Mediator =>
-        _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
+    protected IMediator Mediator =>
+        _mediator ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
 
     protected IActionResult HandleResult(Result result)
     {

@@ -1,6 +1,6 @@
 using PingPong.Application.Abstractions.Messaging;
 
-namespace PingPong.Application.Players.GetById;
+namespace PingPong.Application.Features.Players.GetById;
 
 public sealed record GetPlayerByIdQuery(Guid Id) : IQuery<PlayerResponse>;
 

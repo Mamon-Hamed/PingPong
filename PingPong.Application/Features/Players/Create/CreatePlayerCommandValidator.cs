@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace PingPong.Application.Players.Create;
+namespace PingPong.Application.Features.Players.Create;
 
-internal sealed class CreatePlayerCommandValidator : AbstractValidator<CreatePlayerCommand>
+public sealed class CreatePlayerCommandValidator : AbstractValidator<CreatePlayerCommand>
 {
     public CreatePlayerCommandValidator()
     {

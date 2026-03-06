@@ -1,11 +1,11 @@
-using MediatR;
+using Cortex.Mediator;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using PingPong.Domain.Primitives;
 
 namespace PingPong.Infrastructure.Persistence.Interceptors;
 
-public sealed class DomainEventDispatcherInterceptor(IPublisher publisher) : SaveChangesInterceptor
+public sealed class DomainEventDispatcherInterceptor(IMediator mediator) : SaveChangesInterceptor
 {
     public override async ValueTask<int> SavedChangesAsync(
         SaveChangesCompletedEventData eventData,
@@ -35,7 +35,7 @@ public sealed class DomainEventDispatcherInterceptor(IPublisher publisher) : Sav
 
         foreach (var domainEvent in domainEvents)
         {
-            await publisher.Publish(domainEvent, cancellationToken);
+            await mediator.PublishAsync(domainEvent, cancellationToken);
         }
     }
 }

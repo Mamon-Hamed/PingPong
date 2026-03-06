@@ -1,22 +1,17 @@
 using PingPong.Application.Abstractions.Messaging;
+using PingPong.Application.Common;
 using PingPong.Domain.Entities;
 using PingPong.Domain.Exceptions;
 using PingPong.Domain.Repositories;
 
-namespace PingPong.Application.Players.GetById;
+namespace PingPong.Application.Features.Players.GetById;
 
-internal sealed class GetPlayerByIdQueryHandler : IQueryHandler<GetPlayerByIdQuery, PlayerResponse>
+public sealed class GetPlayerByIdQueryHandler(IPlayerRepository playerRepository)
+    : IQueryHandler<GetPlayerByIdQuery, PlayerResponse>
 {
-    private readonly IPlayerRepository _playerRepository;
-
-    public GetPlayerByIdQueryHandler(IPlayerRepository playerRepository)
-    {
-        _playerRepository = playerRepository;
-    }
-
     public async Task<Result<PlayerResponse>> Handle(GetPlayerByIdQuery request, CancellationToken cancellationToken)
     {
-        var player = await _playerRepository.GetByIdAsync(new PlayerId(request.Id), cancellationToken);
+        var player = await playerRepository.GetByIdAsync(new PlayerId(request.Id), cancellationToken);
 
         if (player is null)
             throw new NotFoundException(nameof(Player), request.Id);

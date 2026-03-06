@@ -1,4 +1,4 @@
-namespace PingPong.Application;
+namespace PingPong.Application.Common;
 
 public class Result
 {
@@ -20,7 +20,7 @@ public class Result
 
 public class Result<TValue> : Result
 {
-    internal Result(TValue? value, bool isSuccess, string? error) : base(isSuccess, error)
+    public Result(TValue? value, bool isSuccess, string? error) : base(isSuccess, error)
     {
         Value = value;
     }

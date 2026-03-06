@@ -1,7 +1,7 @@
-using PingPong.Application.Abstractions.Authentication;
+
 using PingPong.Application.Abstractions.Messaging;
 
-namespace PingPong.Application.Auth.Login;
+namespace PingPong.Application.Features.Auth.Login;
 
 public sealed record LoginCommand(string Email, string Password) : ICommand<LoginResponse>;
 

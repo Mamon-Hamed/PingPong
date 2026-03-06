@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace PingPong.Application.Auth.Register;
+namespace PingPong.Application.Features.Auth.Register;
 
-internal sealed class RegisterCommandValidator : AbstractValidator<RegisterCommand>
+public sealed class RegisterCommandValidator : AbstractValidator<RegisterCommand>
 {
     public RegisterCommandValidator()
     {

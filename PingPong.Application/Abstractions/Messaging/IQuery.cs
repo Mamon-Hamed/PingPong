@@ -1,5 +1,5 @@
-using MediatR;
+using PingPong.Application.Common;
 
 namespace PingPong.Application.Abstractions.Messaging;
 
-public interface IQuery<TResponse> : IRequest<Result<TResponse>>;
+public interface IQuery<TResponse> : Cortex.Mediator.Queries.IQuery<Result<TResponse>>;

@@ -1,31 +1,22 @@
+using Cortex.Mediator.Processors;
 using FluentValidation;
-using MediatR;
 using ValidationException = PingPong.Domain.Exceptions.ValidationException;
 
 namespace PingPong.Application.Behaviors;
 
-public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
+public sealed class ValidationBehavior<TRequest>(IEnumerable<IValidator<TRequest>> validators)
+    : IRequestPreProcessor<TRequest>
+    where TRequest : notnull
 {
-    private readonly IEnumerable<IValidator<TRequest>> _validators;
-
-    public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
+    public async Task ProcessAsync(TRequest request, CancellationToken cancellationToken)
     {
-        _validators = validators;
-    }
-
-    public async Task<TResponse> Handle(
-        TRequest request,
-        RequestHandlerDelegate<TResponse> next,
-        CancellationToken cancellationToken)
-    {
-        if (!_validators.Any())
-            return await next();
+        if (!validators.Any())
+            return ;
 
         var context = new ValidationContext<TRequest>(request);
 
         var validationResults = await Task.WhenAll(
-            _validators.Select(v => v.ValidateAsync(context, cancellationToken)));
+            validators.Select(v => v.ValidateAsync(context, cancellationToken)));
 
         var failures = validationResults
             .SelectMany(r => r.Errors)
@@ -38,6 +29,5 @@ public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
         if (failures.Count != 0)
             throw new ValidationException(failures);
 
-        return await next();
     }
 }

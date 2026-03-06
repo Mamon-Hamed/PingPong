@@ -1,6 +1,6 @@
 using PingPong.Application.Abstractions.Messaging;
 
-namespace PingPong.Application.Auth.Register;
+namespace PingPong.Application.Features.Auth.Register;
 
 public sealed record RegisterCommand(
     string FirstName,

@@ -9,14 +9,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.API/Install/Compiler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.API/Install/DependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Application/GlobalUsing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Middleware/GlobalExceptionHandlerMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Middleware/GlobalExceptionHandlerMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IDomainEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IDomainEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Login/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Login/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Login/LoginCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Register/RegisterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Register/RegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Auth/Register/RegisterCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Behaviors/LoggingBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Behaviors/LoggingBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Behaviors/ValidationBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Behaviors/ValidationBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Common/Result.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/DependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommandHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Players/GetById/GetPlayerByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Players/GetById/GetPlayerByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Domain/PingPong.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/PingPong.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/IDomainEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/IDomainEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260213113802_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260213113802_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/DomainEventDispatcherInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/DomainEventDispatcherInterceptor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +60,9 @@
       <entry key="_C:/Users/LOQ/Desktop/Mamoun/PingPong" value="39bnrskG1th3C7aBBGBwRedEGiS" />
     </persistenceIdMap>
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="25" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
@@ -37,12 +71,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cdad336c9a2440f8cac2845f83e78801a00/31/cc4322f9/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7359108b69f4d7c8bcac88ec1e70a7811600/e8/e792a3de/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.API/Install/Compiler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.API/Install/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Middleware/GlobalExceptionHandlerMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ICurrentUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/ICommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/IDomainEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,13 +98,13 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/PagedResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/Result.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/GlobalUsing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Players/Create/CreatePlayerCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Players/GetById/GetPlayerByIdQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Players/GetById/GetPlayerByIdQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/BadRequestException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/ConflictException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/DomainException.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,7 +154,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.PingPong: http.executor": "Run",
-    ".NET Launch Settings Profile.PingPong: https.executor": "Run",
+    ".NET Launch Settings Profile.PingPong: https.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -176,6 +215,7 @@
       <updated>1770973840714</updated>
       <workItem from="1770973847844" duration="4275000" />
       <workItem from="1772614761557" duration="382000" />
+      <workItem from="1772781160782" duration="5085000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -213,6 +253,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Users\LOQ\Desktop\Mamoun\PingPong\PingPong.Application\Auth\Login\LoginCommandHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="515" />
+            </startOffsets>
+            <endOffsets>
+              <option value="647" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,10 +1,11 @@
 using PingPong.Application.Abstractions.Authentication;
 using PingPong.Application.Abstractions.Messaging;
+using PingPong.Application.Common;
 using PingPong.Domain.Exceptions;
 
-namespace PingPong.Application.Auth.Register;
+namespace PingPong.Application.Features.Auth.Register;
 
-internal sealed class RegisterCommandHandler(IIdentityService identityService) : ICommandHandler<RegisterCommand>
+public sealed class RegisterCommandHandler(IIdentityService identityService) : ICommandHandler<RegisterCommand>
 {
     public async Task<Result> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {

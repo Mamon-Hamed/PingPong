@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace PingPong.Application.Auth.Login;
+namespace PingPong.Application.Features.Auth.Login;
 
-internal sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
+public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
 {
     public LoginCommandValidator()
     {
