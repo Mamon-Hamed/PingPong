@@ -8,52 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PingPong.Application/Shared/Extensions/MappingExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingPong.Application/Shared/Extensions/QueryableExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Models/PaginatedList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IAuditQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPagedQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISortQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/PagedResult.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandValidator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQueryHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/AggregateRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/AggregateRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/IAuditableEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/IAuditableEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/StronglyTypedId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/StronglyTypedId.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPlayerRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PlayerConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Converters/StronglyTypedIdValueConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Converters/StronglyTypedIdValueConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/AuditableEntityInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/AuditableEntityInterceptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/PlayerRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" afterDir="false" />
-    </list>
+    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +23,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="18" />
+    <option name="cachedIndexableFilesCount" value="63" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -187,28 +142,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.PingPong: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.PingPong: https.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.PingPong: http.executor": "Run",
+    ".NET Launch Settings Profile.PingPong: https.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PingPong: https">
     <configuration name="PingPong: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" />
@@ -257,6 +216,7 @@
       <workItem from="1773913627789" duration="4295000" />
       <workItem from="1774578691990" duration="1058000" />
       <workItem from="1774579810418" duration="8397000" />
+      <workItem from="1775788830572" duration="402000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -282,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772799376975</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init">
+      <option name="closed" value="true" />
+      <created>1775788858907</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775788858907</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,10 +260,10 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="init" />
     <MESSAGE value="use mediator cortex" />
     <MESSAGE value="add initial infrastructure migrations including identity and refresh tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="add initial infrastructure migrations including identity and refresh tokens" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
