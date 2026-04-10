@@ -1,6 +1,4 @@
-﻿using Cortex.Mediator.Caching;
-
-namespace PingPong.Application.Abstractions.Messaging;
+﻿namespace PingPong.Application.Abstractions.Messaging;
 
 // public class CacheKeyGenerator : ICacheKeyGenerator
 // {

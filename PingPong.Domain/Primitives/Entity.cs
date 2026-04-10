@@ -1,3 +1,5 @@
+using PingPong.Domain.StronglyTypes;
+
 namespace PingPong.Domain.Primitives;
 
 public abstract class Entity<TId> : IAuditableEntity, IHasDomainEvents, IEquatable<Entity<TId>>
@@ -14,13 +16,15 @@ public abstract class Entity<TId> : IAuditableEntity, IHasDomainEvents, IEquatab
 
     public TId Id { get; private init; } = default!;
 
-    public DateTime CreatedAtUtc { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public DateTime? UpdatedAtUtc { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     public string? CreatedBy { get; set; }
+    public string? CreatedByName { get; set; }
 
     public string? UpdatedBy { get; set; }
+    public string? UpdatedByName { get; set; }
 
     public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 

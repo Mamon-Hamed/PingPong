@@ -36,11 +36,11 @@ public sealed class AuditableEntityInterceptor(ICurrentUserService currentUserSe
         {
             if (entry.State == EntityState.Added)
             {
-                entry.Property(nameof(IAuditableEntity.CreatedAtUtc)).CurrentValue = DateTime.UtcNow;
+                entry.Property(nameof(IAuditableEntity.CreatedAt)).CurrentValue = DateTime.UtcNow;
                 entry.Property(nameof(IAuditableEntity.CreatedBy)).CurrentValue = currentUserService.UserId;
             }
 
-            entry.Property(nameof(IAuditableEntity.UpdatedAtUtc)).CurrentValue = DateTime.UtcNow;
+            entry.Property(nameof(IAuditableEntity.UpdatedAt)).CurrentValue = DateTime.UtcNow;
             entry.Property(nameof(IAuditableEntity.UpdatedBy)).CurrentValue = currentUserService.UserId;
         }
     }

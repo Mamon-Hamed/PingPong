@@ -9,17 +9,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PingPong.Application/Shared/Extensions/MappingExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Application/Shared/Extensions/QueryableExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Models/PaginatedList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IAuditQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPagedQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISortQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Messaging/CachKeyGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/PagedResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PlayerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PlayerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/Create/CreatePlayerCommandValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQuery.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Players/GetById/GetPlayerByIdQueryHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/AggregateRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/AggregateRoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/IAuditableEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/IAuditableEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/StronglyTypedId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/StronglyTypedId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPlayerRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PlayerConfiguration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Converters/StronglyTypedIdValueConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Converters/StronglyTypedIdValueConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/AuditableEntityInterceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/AuditableEntityInterceptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/PlayerRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +68,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="26" />
+    <option name="cachedIndexableFilesCount" value="18" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -43,10 +76,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cdad336c9a2440f8cac2845f83e78801a00/31/cc4322f9/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bc5227a47ddd48d1a81dee82a65601c54f908/75/bc974e68/HttpContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7359108b69f4d7c8bcac88ec1e70a7811600/e8/e792a3de/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/PlayersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/PartnersController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Install/Compiler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Install/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Middleware/GlobalExceptionHandlerMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,9 +100,43 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/Result.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/CategoryResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Delete/DeleteCategoryCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Delete/DeleteCategoryCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/GetAll/GetAllCategoriesQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/GetAll/GetAllCategoriesQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Delete/DeletePartnerCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Delete/DeleteSubscriptionPlanCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Delete/DeleteSubscriptionPlanCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/GetAll/GetAllSubscriptionPlansQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/GetById/GetSubscriptionPlanByIdQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/GetById/GetSubscriptionPlanByIdQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/SubscriptionPlanResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/GlobalUsing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Category.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Partner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/SubscriptionPlan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/BadRequestException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/ConflictException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/DomainException.cs" root0="FORCE_HIGHLIGHTING" />
@@ -78,9 +147,9 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Primitives/IAuditableEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Primitives/IDomainEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Primitives/IHasDomainEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Primitives/StronglyTypedId.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Repositories/IPlayerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Repositories/ICategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Repositories/ISubscriptionPlanRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Repositories/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtSettings.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,12 +159,15 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CategoryConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/IdentityConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PlayerConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PartnerConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/SubscriptionPlanConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Converters/StronglyTypedIdValueConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/AuditableEntityInterceptor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Interceptors/DomainEventDispatcherInterceptor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/PlayerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/SubscriptionPlanRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Infrastructure/Persistence/UnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -118,7 +190,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.PingPong: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.PingPong: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.PingPong: https.executor&quot;: &quot;Debug&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -126,6 +198,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -180,7 +253,10 @@
       <workItem from="1770973847844" duration="4275000" />
       <workItem from="1772614761557" duration="382000" />
       <workItem from="1772781160782" duration="6672000" />
-      <workItem from="1772798994084" duration="365000" />
+      <workItem from="1772798994084" duration="4713000" />
+      <workItem from="1773913627789" duration="4295000" />
+      <workItem from="1774578691990" duration="1058000" />
+      <workItem from="1774579810418" duration="8397000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -198,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772787425597</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add initial infrastructure migrations including identity and refresh tokens">
+      <option name="closed" value="true" />
+      <created>1772799376975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772799376975</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +294,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="use mediator cortex" />
-    <option name="LAST_COMMIT_MESSAGE" value="use mediator cortex" />
+    <MESSAGE value="add initial infrastructure migrations including identity and refresh tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial infrastructure migrations including identity and refresh tokens" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

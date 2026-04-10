@@ -1,3 +1,5 @@
+using PingPong.Domain.StronglyTypes;
+
 namespace PingPong.Domain.Primitives;
 
 public abstract class AggregateRoot<TId> : Entity<TId>

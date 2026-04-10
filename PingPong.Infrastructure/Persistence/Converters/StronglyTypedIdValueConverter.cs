@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PingPong.Domain.Primitives;
+using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Infrastructure.Persistence.Converters;
 

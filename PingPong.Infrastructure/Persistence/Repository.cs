@@ -1,8 +1,13 @@
 using System.Linq.Expressions;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
+using PingPong.Application.Abstractions.Messaging;
+using PingPong.Application.Shared.Extensions;
 using PingPong.Domain;
+using PingPong.Domain.Models;
 using PingPong.Domain.Primitives;
 using PingPong.Domain.Repositories;
+using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Infrastructure.Persistence;
 
@@ -18,9 +23,27 @@ public abstract class Repository<TEntity, TId>(AppDbContext dbContext) : IReposi
         return await DbSet.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
     }
 
-    public async Task<IReadOnlyList<TEntity>> GetAllAsync(CancellationToken cancellationToken = default)
+    public Task<List<TEntity>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await DbSet.AsNoTracking().ToListAsync(cancellationToken);
+        return DbSet.ToListAsync(cancellationToken);
+    }
+
+    public Task<PaginatedList<TDestination>> GetPaginatedAsync<TDestination, TQuery>(
+        TQuery request,
+        Func<TQuery, IQueryable<TEntity>> query,
+        CancellationToken cancellationToken = default)
+        where TQuery : IAuditQuery
+    {
+        return query(request)
+                .AsNoTracking()
+                .ProjectToType<TDestination>(TypeAdapterConfig.GlobalSettings)
+                .PaginatedListAsync(request.Page, request.PageSize, cancellationToken)
+            ;
+    }
+
+    public IQueryable<TEntity> GetAsNoTrackingAsync()
+    {
+        return DbSet.AsNoTracking().AsQueryable();
     }
 
     public async Task<IReadOnlyList<TEntity>> FindAsync(

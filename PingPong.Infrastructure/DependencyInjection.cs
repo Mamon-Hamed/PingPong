@@ -51,7 +51,9 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddScoped<IPlayerRepository, PlayerRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ISubscriptionPlanRepository, SubscriptionPlanRepository>();
+        services.AddScoped<IPartnerRepository, PartnerRepository>();
     }
 
     private static void AddIdentityConfiguration(this IServiceCollection services)

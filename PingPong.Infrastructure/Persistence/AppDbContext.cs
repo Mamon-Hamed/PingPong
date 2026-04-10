@@ -7,7 +7,9 @@ namespace PingPong.Infrastructure.Persistence;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
-    public DbSet<Player> Players => Set<Player>();
+    public DbSet<CategoryEntity> Categories => Set<CategoryEntity>();
+    public DbSet<SubscriptionPlanEntity> SubscriptionPlans => Set<SubscriptionPlanEntity>();
+    public DbSet<PartnerEntity> Partners => Set<PartnerEntity>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

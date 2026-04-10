@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PingPong.Domain;
 using PingPong.Domain.Primitives;
+using PingPong.Domain.StronglyTypes;
 using PingPong.Infrastructure.Persistence.Converters;
 
 namespace PingPong.Infrastructure.Persistence.Configurations;
@@ -18,10 +19,10 @@ public abstract class BaseEntityConfiguration<TEntity, TId> : IEntityTypeConfigu
             .HasConversion(new StronglyTypedIdValueConverter<TId>())
             .ValueGeneratedNever();
 
-        builder.Property(e => e.CreatedAtUtc)
+        builder.Property(e => e.CreatedAt)
             .IsRequired();
 
-        builder.Property(e => e.UpdatedAtUtc);
+        builder.Property(e => e.UpdatedAt);
 
         builder.Property(e => e.CreatedBy)
             .HasMaxLength(256);

@@ -1,6 +1,5 @@
 using Cortex.Mediator;
 using Microsoft.AspNetCore.Mvc;
-using PingPong.Application;
 using PingPong.Application.Common;
 
 namespace PingPong.API.Controllers;
