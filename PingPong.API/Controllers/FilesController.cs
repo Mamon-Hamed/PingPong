@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PingPong.Application.Features.Files;
 using PingPong.Application.Features.Files.RemoveImage;
 using PingPong.Application.Features.Files.UploadImage;
 

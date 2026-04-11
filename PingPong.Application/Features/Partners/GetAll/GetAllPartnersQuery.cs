@@ -1,6 +1,5 @@
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Domain.Entities;
-using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.GetAll;
 

@@ -1,9 +1,7 @@
 using System.Linq.Expressions;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
-using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Shared.Extensions;
-using PingPong.Domain;
 using PingPong.Domain.Models;
 using PingPong.Domain.Primitives;
 using PingPong.Domain.Repositories;

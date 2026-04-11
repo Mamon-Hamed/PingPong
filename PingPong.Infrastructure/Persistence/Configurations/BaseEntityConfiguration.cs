@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PingPong.Domain;
 using PingPong.Domain.Primitives;
 using PingPong.Domain.StronglyTypes;
 using PingPong.Infrastructure.Persistence.Converters;
