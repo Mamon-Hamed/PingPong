@@ -6,7 +6,7 @@ using Abstractions.Messaging;
 using Domain.Repositories;
 using Common;
 
-internal sealed class UpdateCategoryCommandHandler(
+public sealed class UpdateCategoryCommandHandler(
     ICategoryRepository categoryRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<UpdateCategoryCommand>

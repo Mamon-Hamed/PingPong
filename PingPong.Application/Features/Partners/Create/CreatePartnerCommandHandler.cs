@@ -7,7 +7,7 @@ using Domain.Entities;
 using Domain.Repositories;
 using Common;
 
-internal sealed class CreatePartnerCommandHandler(
+public sealed class CreatePartnerCommandHandler(
     IPartnerRepository partnerRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<CreatePartnerCommand, Guid>

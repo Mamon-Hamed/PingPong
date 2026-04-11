@@ -6,7 +6,7 @@ using Abstractions.Messaging;
 using Domain.Repositories;
 using Common;
 
-internal sealed class GetSubscriptionPlanByIdQueryHandler(ISubscriptionPlanRepository subscriptionPlanRepository)
+public sealed class GetSubscriptionPlanByIdQueryHandler(ISubscriptionPlanRepository subscriptionPlanRepository)
     : IQueryHandler<GetSubscriptionPlanByIdQuery, SubscriptionPlanResponse>
 {
     public async Task<Result<SubscriptionPlanResponse>> Handle(GetSubscriptionPlanByIdQuery request, CancellationToken cancellationToken)

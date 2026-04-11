@@ -7,7 +7,7 @@ using PingPong.Domain.Repositories;
 
 namespace PingPong.Application.Features.Files.CleanUpOrphanFiles;
 
-internal sealed class CleanUpOrphanFilesCommandHandler(
+public sealed class CleanUpOrphanFilesCommandHandler(
     IWebHostEnvironment environment,
     ICategoryRepository categoryRepository,
     IPartnerRepository partnerRepository,

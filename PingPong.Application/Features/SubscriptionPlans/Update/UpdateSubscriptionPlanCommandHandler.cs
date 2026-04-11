@@ -6,7 +6,7 @@ using Abstractions.Messaging;
 using Domain.Repositories;
 using Common;
 
-internal sealed class UpdateSubscriptionPlanCommandHandler(
+public sealed class UpdateSubscriptionPlanCommandHandler(
     ISubscriptionPlanRepository subscriptionPlanRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<UpdateSubscriptionPlanCommand>

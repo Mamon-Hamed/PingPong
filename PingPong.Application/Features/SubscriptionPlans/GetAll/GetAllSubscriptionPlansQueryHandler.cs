@@ -7,7 +7,7 @@ using PingPong.Domain.StronglyTypes;
 namespace PingPong.Application.Features.SubscriptionPlans.GetAll;
 
 
-internal sealed class GetAllSubscriptionPlansQueryHandler(ISubscriptionPlanRepository repository)
+public sealed class GetAllSubscriptionPlansQueryHandler(ISubscriptionPlanRepository repository)
     : GetAllQueryHandler<GetAllSubscriptionPlansQuery,SubscriptionPlanEntity, SubscriptionPlanId, SubscriptionPlanResponse>(repository)
 {
     protected override IQueryable<SubscriptionPlanEntity> BuildQuery(GetAllSubscriptionPlansQuery query)

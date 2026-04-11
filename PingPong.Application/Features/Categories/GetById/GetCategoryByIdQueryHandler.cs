@@ -5,7 +5,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Categories.GetById;
 
-internal sealed class GetCategoryByIdQueryHandler(ICategoryRepository categoryRepository)
+public sealed class GetCategoryByIdQueryHandler(ICategoryRepository categoryRepository)
     : GetByIdQueryHandler<GetCategoryByIdQuery, CategoryEntity, CategoryId, CategoryResponse>(categoryRepository)
 {
     protected override CategoryResponse MapToResponse(CategoryEntity entity)

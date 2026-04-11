@@ -1,10 +1,12 @@
-﻿namespace PingPong.Application.Abstractions.Messaging;
+﻿using Cortex.Mediator.Caching;
 
-// public class CacheKeyGenerator : ICacheKeyGenerator
-// {
-//     public string GenerateKey<TQuery, TResult>(TQuery query) 
-//         where TQuery : IQuery<TResult>
-//     {
-//         return $"PingPong:{typeof(TQuery).Name}:{query.GetHashCode()}";
-//     }
-// }
+namespace PingPong.Application.Abstractions.Messaging;
+
+public class CacheKeyGenerator : ICacheKeyGenerator
+{
+    public string GenerateKey<TQuery, TResult>(TQuery query) 
+        where TQuery : Cortex.Mediator.Queries.IQuery<TResult>
+    {
+        return $"PingPong:{typeof(TQuery).Name}:{query.GetHashCode()}";
+    }
+}

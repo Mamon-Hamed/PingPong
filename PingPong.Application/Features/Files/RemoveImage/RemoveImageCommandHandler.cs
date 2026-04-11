@@ -5,7 +5,7 @@ using PingPong.Application.Common;
 
 namespace PingPong.Application.Features.Files.RemoveImage;
 
-internal sealed class RemoveImageCommandHandler(
+public sealed class RemoveImageCommandHandler(
     IWebHostEnvironment environment,
     IOptions<FileSettings> fileSettings)
     : ICommandHandler<RemoveImageCommand>

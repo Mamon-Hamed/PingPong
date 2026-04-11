@@ -5,7 +5,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.Delete;
 
-internal sealed class DeletePartnerCommandHandler(
+public sealed class DeletePartnerCommandHandler(
     IPartnerRepository partnerRepository,
     IUnitOfWork unitOfWork)
     : DeleteCommandHandler<DeletePartnerCommand, PartnerEntity, PartnerId>(partnerRepository, unitOfWork);

@@ -18,7 +18,7 @@ public abstract class CrudController<TId, TResponse, TCreateCommand, TUpdateComm
     {
         var result = await Mediator.SendCommandAsync(command, cancellationToken)
             .ConfigureAwait(false);
-        return HandleCreatedResult(result, nameof(GetById), new { id = result.Value });
+        return await GetById(result.Value, cancellationToken);
     }
 
     [HttpPut("{id}")]
@@ -51,9 +51,8 @@ public abstract class CrudController<TId, TResponse, TCreateCommand, TUpdateComm
     }
 
     [HttpGet]
-    public virtual async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+    public virtual async Task<IActionResult> GetAll([FromQuery]TGetAllQuery query,CancellationToken cancellationToken)
     {
-        var query = Activator.CreateInstance<TGetAllQuery>();
         var result = await Mediator.SendQueryAsync(query, cancellationToken)
             .ConfigureAwait(false);
         return HandleResult(result);

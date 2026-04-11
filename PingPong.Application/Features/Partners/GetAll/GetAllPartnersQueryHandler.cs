@@ -6,7 +6,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.GetAll;
 
-internal sealed class GetAllPartnersQueryHandler(IPartnerRepository repository)
+public sealed class GetAllPartnersQueryHandler(IPartnerRepository repository)
     : GetAllQueryHandler<GetAllPartnersQuery, PartnerEntity, PartnerId, PartnerResponse>(repository)
 {
 

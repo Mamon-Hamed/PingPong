@@ -6,7 +6,7 @@ using Abstractions.Messaging;
 using Domain.Repositories;
 using Common;
 
-internal sealed class UpdatePartnerCommandHandler(
+public sealed class UpdatePartnerCommandHandler(
     IPartnerRepository partnerRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<UpdatePartnerCommand>

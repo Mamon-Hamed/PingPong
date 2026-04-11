@@ -5,7 +5,7 @@ using Domain.Entities;
 using Domain.Repositories;
 using Common;
 
-internal sealed class CreateCategoryCommandHandler(
+public sealed class CreateCategoryCommandHandler(
     ICategoryRepository categoryRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<CreateCategoryCommand, Guid>

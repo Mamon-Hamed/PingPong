@@ -6,7 +6,7 @@ using Abstractions.Messaging;
 using Domain.Repositories;
 using Common;
 
-internal sealed class DeleteSubscriptionPlanCommandHandler(
+public sealed class DeleteSubscriptionPlanCommandHandler(
     ISubscriptionPlanRepository subscriptionPlanRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<DeleteSubscriptionPlanCommand>

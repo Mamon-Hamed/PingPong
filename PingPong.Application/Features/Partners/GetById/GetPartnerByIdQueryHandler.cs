@@ -5,7 +5,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.GetById;
 
-internal sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerRepository)
+public sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerRepository)
     : GetByIdQueryHandler<GetPartnerByIdQuery, PartnerEntity, PartnerId, PartnerResponse>(partnerRepository)
 {
     protected override PartnerResponse MapToResponse(PartnerEntity entity)

@@ -6,7 +6,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Categories.GetAll;
 
-internal sealed class GetAllCategoriesQueryHandler(ICategoryRepository repository)
+public sealed class GetAllCategoriesQueryHandler(ICategoryRepository repository)
     : GetAllQueryHandler<GetAllCategoriesQuery, CategoryEntity, CategoryId, CategoryResponse>(repository)
 {
     protected override IQueryable<CategoryEntity> BuildQuery(GetAllCategoriesQuery query)

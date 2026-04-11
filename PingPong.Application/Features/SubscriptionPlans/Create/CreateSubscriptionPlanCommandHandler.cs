@@ -5,7 +5,7 @@ using Domain.Entities;
 using Domain.Repositories;
 using Common;
 
-internal sealed class CreateSubscriptionPlanCommandHandler(
+public sealed class CreateSubscriptionPlanCommandHandler(
     ISubscriptionPlanRepository subscriptionPlanRepository,
     IUnitOfWork unitOfWork)
     : ICommandHandler<CreateSubscriptionPlanCommand, Guid>

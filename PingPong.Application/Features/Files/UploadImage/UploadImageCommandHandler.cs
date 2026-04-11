@@ -8,7 +8,7 @@ using PingPong.Application.Shared.Extensions;
 
 namespace PingPong.Application.Features.Files;
 
-internal sealed class UploadImageCommandHandler(
+public sealed class UploadImageCommandHandler(
     IWebHostEnvironment environment,
     IHttpContextAccessor httpContextAccessor,
     IOptions<FileSettings> fileSettings)
