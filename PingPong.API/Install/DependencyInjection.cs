@@ -8,6 +8,17 @@ public static class DependencyInjection
     {
         services.AddControllers();
 
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll",
+                policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+        });
+
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>
         {

@@ -7,8 +7,23 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="" />
+    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Install/Compiler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Install/Compiler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Install/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Install/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +45,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cdad336c9a2440f8cac2845f83e78801a00/31/cc4322f9/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bc5227a47ddd48d1a81dee82a65601c54f908/75/bc974e68/HttpContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7359108b69f4d7c8bcac88ec1e70a7811600/e8/e792a3de/ICommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,7 +63,6 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Behaviors/LoggingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Behaviors/ValidationBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/ApiResponse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/PagedResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Common/Result.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,9 +100,6 @@
     <setting file="file://$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommandValidator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Application/GlobalUsing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Category.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/Partner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PingPong.Domain/Entities/SubscriptionPlan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/BadRequestException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/ConflictException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.Domain/Exceptions/DomainException.cs" root0="FORCE_HIGHLIGHTING" />
@@ -142,32 +150,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.PingPong: http.executor": "Run",
-    ".NET Launch Settings Profile.PingPong: https.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.PingPong: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.PingPong: https.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PingPong: https">
     <configuration name="PingPong: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" />
@@ -216,7 +225,10 @@
       <workItem from="1773913627789" duration="4295000" />
       <workItem from="1774578691990" duration="1058000" />
       <workItem from="1774579810418" duration="8397000" />
-      <workItem from="1775788830572" duration="402000" />
+      <workItem from="1775788830572" duration="4024000" />
+      <workItem from="1775878040572" duration="2315000" />
+      <workItem from="1775895977488" duration="335000" />
+      <workItem from="1775896398326" duration="1841000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -250,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775788858907</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update IDE configuration files">
+      <option name="closed" value="true" />
+      <created>1775789372098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775789372098</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +283,8 @@
     <MESSAGE value="use mediator cortex" />
     <MESSAGE value="add initial infrastructure migrations including identity and refresh tokens" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="update IDE configuration files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update IDE configuration files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

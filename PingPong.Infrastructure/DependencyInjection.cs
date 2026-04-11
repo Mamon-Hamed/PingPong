@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using PingPong.Application.Abstractions;
 using PingPong.Application.Abstractions.Authentication;
 using PingPong.Domain.Repositories;
 using PingPong.Infrastructure.Authentication;
@@ -31,6 +33,7 @@ public static class DependencyInjection
 
     private static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<Application.Features.Files.FileSettings>(configuration.GetSection(Application.Features.Files.FileSettings.SectionName));
         services.AddScoped<AuditableEntityInterceptor>();
         services.AddScoped<DomainEventDispatcherInterceptor>();
 
@@ -111,6 +114,7 @@ public static class DependencyInjection
     private static void AddInfrastructureServices(this IServiceCollection services)
     {
         services.AddHttpContextAccessor();
+        services.AddHostedService<OrphanFileCleanupWorker>();
         services.AddScoped<ITokenService, JwtTokenService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddScoped<IIdentityService, IdentityService>();
