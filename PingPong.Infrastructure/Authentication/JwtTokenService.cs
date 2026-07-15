@@ -15,6 +15,7 @@ public sealed class JwtTokenService(IOptions<JwtSettings> jwtSettings) : ITokenS
     public Task<TokenResponse> GenerateTokenAsync(
         string userId,
         string email,
+        string fullName,
         IList<string> roles,
         CancellationToken cancellationToken = default)
     {
@@ -22,6 +23,7 @@ public sealed class JwtTokenService(IOptions<JwtSettings> jwtSettings) : ITokenS
         {
             new(JwtRegisteredClaimNames.Sub, userId),
             new(JwtRegisteredClaimNames.Email, email),
+            new(JwtRegisteredClaimNames.Name, fullName),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
         };

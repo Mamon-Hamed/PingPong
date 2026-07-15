@@ -29,7 +29,8 @@ public sealed class UploadImageCommandHandler(
         if (!_settings.AllowedImageExtensions.Contains(extension))
             return Result.Failure<string>("Invalid file type. Only images are allowed.");
 
-        var uploadsPath = Path.Combine(environment.WebRootPath, _settings.UploadsFolder);
+        var webRootPath = environment.WebRootPath ?? Path.Combine(environment.ContentRootPath, "wwwroot");
+        var uploadsPath = Path.Combine(webRootPath, _settings.UploadsFolder);
         if (!Directory.Exists(uploadsPath))
             Directory.CreateDirectory(uploadsPath);
 

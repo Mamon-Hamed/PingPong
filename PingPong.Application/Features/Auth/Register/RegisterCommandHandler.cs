@@ -9,17 +9,17 @@ public sealed class RegisterCommandHandler(IIdentityService identityService) : I
 {
     public async Task<Result> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
-        var (succeeded, userId, errors) = await identityService.RegisterAsync(
+        var response = await identityService.RegisterAsync(new RegisterRequest(
             request.FirstName,
             request.LastName,
             request.Email,
-            request.Password);
+            request.Password));
 
-        if (!succeeded)
+        if (!response.Succeeded)
         {
             var errorDict = new Dictionary<string, string[]>
             {
-                { "Identity", errors }
+                { "Identity", response.Errors }
             };
             throw new ValidationException(errorDict);
         }

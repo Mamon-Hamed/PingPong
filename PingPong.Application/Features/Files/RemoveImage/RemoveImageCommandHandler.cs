@@ -17,7 +17,8 @@ public sealed class RemoveImageCommandHandler(
         try
         {
             var fileName = Path.GetFileName(command.Url);
-            var filePath = Path.Combine(environment.WebRootPath, _settings.UploadsFolder, fileName);
+            var webRootPath = environment.WebRootPath ?? Path.Combine(environment.ContentRootPath, "wwwroot");
+            var filePath = Path.Combine(webRootPath, _settings.UploadsFolder, fileName);
 
             if (File.Exists(filePath))
             {

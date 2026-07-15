@@ -2,13 +2,11 @@ namespace PingPong.Application.Abstractions.Authentication;
 
 public interface IIdentityService
 {
-    Task<(bool Succeeded, string UserId, string[] Errors)> RegisterAsync(
-        string firstName, string lastName, string email, string password);
+    Task<IdentityRegistrationResponse> RegisterAsync(RegisterRequest request);
 
-    Task<(bool Succeeded, string UserId, string Email, IList<string> Roles)> ValidateCredentialsAsync(
-        string email, string password);
+    Task<IdentityValidationResponse> ValidateCredentialsAsync(ValidateCredentialsRequest request);
 
-    Task<bool> ValidateRefreshTokenAsync(string userId, string refreshToken);
+    Task<bool> ValidateRefreshTokenAsync(ValidateRefreshTokenRequest request);
 
-    Task UpdateRefreshTokenAsync(string userId, string newRefreshToken, DateTime expiresAtUtc);
+    Task UpdateRefreshTokenAsync(UpdateRefreshTokenRequest request);
 }

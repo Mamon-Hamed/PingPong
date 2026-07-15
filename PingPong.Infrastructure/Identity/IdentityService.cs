@@ -6,52 +6,50 @@ namespace PingPong.Infrastructure.Identity;
 
 public sealed class IdentityService(UserManager<ApplicationUser> userManager) : IIdentityService
 {
-    public async Task<(bool Succeeded, string UserId, string[] Errors)> RegisterAsync(
-        string firstName, string lastName, string email, string password)
+    public async Task<IdentityRegistrationResponse> RegisterAsync(RegisterRequest request)
     {
         var user = new ApplicationUser
         {
-            UserName = email,
-            Email = email,
-            FirstName = firstName,
-            LastName = lastName
+            UserName = request.Email,
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName
         };
 
-        var result = await userManager.CreateAsync(user, password);
+        var result = await userManager.CreateAsync(user, request.Password);
 
         return result.Succeeded
-            ? (true, user.Id, Array.Empty<string>())
-            : (false, string.Empty, result.Errors.Select(e => e.Description).ToArray());
+            ? new IdentityRegistrationResponse(true, user.Id, Array.Empty<string>())
+            : new IdentityRegistrationResponse(false, string.Empty, result.Errors.Select(e => e.Description).ToArray());
     }
 
-    public async Task<(bool Succeeded, string UserId, string Email, IList<string> Roles)> ValidateCredentialsAsync(
-        string email, string password)
+    public async Task<IdentityValidationResponse> ValidateCredentialsAsync(ValidateCredentialsRequest request)
     {
-        var user = await userManager.FindByEmailAsync(email);
+        var user = await userManager.FindByEmailAsync(request.Email);
 
         if (user is null || !user.IsActive)
-            return (false, string.Empty, string.Empty, []);
+            return new IdentityValidationResponse(false, string.Empty, string.Empty, string.Empty, []);
 
-        var isValidPassword = await userManager.CheckPasswordAsync(user, password);
+        var isValidPassword = await userManager.CheckPasswordAsync(user, request.Password);
 
         if (!isValidPassword)
-            return (false, string.Empty, string.Empty, []);
+            return new IdentityValidationResponse(false, string.Empty, string.Empty, string.Empty, []);
 
         var roles = await userManager.GetRolesAsync(user);
 
-        return (true, user.Id, user.Email!, roles);
+        return new IdentityValidationResponse(true, user.Id, user.Email!, user.FullName, roles);
     }
 
-    public async Task<bool> ValidateRefreshTokenAsync(string userId, string refreshToken)
+    public async Task<bool> ValidateRefreshTokenAsync(ValidateRefreshTokenRequest request)
     {
         var user = await userManager.Users
             .Include(u => u.RefreshTokens)
-            .FirstOrDefaultAsync(u => u.Id == userId);
+            .FirstOrDefaultAsync(u => u.Id == request.UserId);
 
         if (user is null || !user.IsActive)
             return false;
 
-        var token = user.RefreshTokens.FirstOrDefault(rt => rt.Token == refreshToken);
+        var token = user.RefreshTokens.FirstOrDefault(rt => rt.Token == request.RefreshToken);
 
         if (token is null || !token.IsActive)
             return false;
@@ -59,11 +57,11 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
         return true;
     }
 
-    public async Task UpdateRefreshTokenAsync(string userId, string newRefreshToken, DateTime expiresAtUtc)
+    public async Task UpdateRefreshTokenAsync(UpdateRefreshTokenRequest request)
     {
         var user = await userManager.Users
             .Include(u => u.RefreshTokens)
-            .FirstOrDefaultAsync(u => u.Id == userId);
+            .FirstOrDefaultAsync(u => u.Id == request.UserId);
 
         if (user is null)
             return;
@@ -77,9 +75,9 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
 
         user.RefreshTokens.Add(new RefreshToken
         {
-            Token = newRefreshToken,
-            ExpiresAtUtc = expiresAtUtc,
-            UserId = userId
+            Token = request.NewRefreshToken,
+            ExpiresAtUtc = request.ExpiresAtUtc,
+            UserId = request.UserId
         });
 
         await userManager.UpdateAsync(user);
