@@ -15,6 +15,7 @@ public sealed class CreatePartnerCommandHandler(
     public async Task<Result<Guid>> Handle(CreatePartnerCommand request, CancellationToken cancellationToken)
     {
         var categoryId = new CategoryId(request.CategoryId);
+        var cityId = new CityId(request.CityId);
         
         var partner = PartnerEntity.Create(
             request.CompanyName,
@@ -22,7 +23,7 @@ public sealed class CreatePartnerCommandHandler(
             request.ContactLastName,
             request.Phone,
             request.Email,
-            request.City,
+            cityId,
             categoryId,
             request.Photos,
             request.IsVerified,

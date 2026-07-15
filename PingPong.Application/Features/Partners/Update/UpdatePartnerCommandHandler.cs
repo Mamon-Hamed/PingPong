@@ -22,6 +22,7 @@ public sealed class UpdatePartnerCommandHandler(
         }
 
         var categoryId = new CategoryId(request.CategoryId);
+        var cityId = new CityId(request.CityId);
 
         partner.Update(
             request.CompanyName,
@@ -29,7 +30,7 @@ public sealed class UpdatePartnerCommandHandler(
             request.ContactLastName,
             request.Phone,
             request.Email,
-            request.City,
+            cityId,
             categoryId,
             request.Photos,
             request.IsVerified,

@@ -6,5 +6,5 @@ public sealed record IdentityValidationResponse(
     bool Succeeded,
     string UserId,
     string Email,
-    string FullName,
+    string UserName,
     IList<string> Roles);

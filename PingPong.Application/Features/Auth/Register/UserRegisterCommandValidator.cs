@@ -1,24 +1,24 @@
-using FluentValidation;
+﻿using FluentValidation;
 using PingPong.Domain.Constants;
 
 namespace PingPong.Application.Features.Auth.Register;
 
-public sealed class RegisterCommandValidator : AbstractValidator<RegisterCommand>
+public sealed class UserRegisterCommandValidator : AbstractValidator<UserRegisterCommand>
 {
-    public RegisterCommandValidator()
+    public UserRegisterCommandValidator()
     {
-        RuleFor(x => x.FirstName)
-            .NotEmpty().WithMessage("First name is required.")
-            .MaximumLength(StringLengths.Length128);
-
-        RuleFor(x => x.LastName)
-            .NotEmpty().WithMessage("Last name is required.")
-            .MaximumLength(StringLengths.Length128);
+        RuleFor(x => x.UserName)
+            .NotEmpty().WithMessage("User name is required.")
+            .MaximumLength(StringLengths.Length256);
 
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email is required.")
             .EmailAddress().WithMessage("Invalid email format.")
             .MaximumLength(StringLengths.Length256);
+
+        RuleFor(x => x.PhoneNumber)
+            .NotEmpty().WithMessage("Phone number is required.")
+            .MaximumLength(StringLengths.Length64);
 
         RuleFor(x => x.Password)
             .NotEmpty().WithMessage("Password is required.")
@@ -27,5 +27,8 @@ public sealed class RegisterCommandValidator : AbstractValidator<RegisterCommand
             .Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter.")
             .Matches("[0-9]").WithMessage("Password must contain at least one digit.")
             .Matches("[^a-zA-Z0-9]").WithMessage("Password must contain at least one special character.");
+
+        RuleFor(x => x.ConfirmPassword)
+            .Equal(x => x.Password).WithMessage("Passwords do not match.");
     }
 }

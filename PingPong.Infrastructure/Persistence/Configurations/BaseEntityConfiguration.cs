@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PingPong.Domain.Constants;
 using PingPong.Domain.Primitives;
 using PingPong.Domain.StronglyTypes;
+using PingPong.Infrastructure.Persistence.Configurations.Extensions;
 using PingPong.Infrastructure.Persistence.Converters;
 
 namespace PingPong.Infrastructure.Persistence.Configurations;
@@ -23,11 +25,9 @@ public abstract class BaseEntityConfiguration<TEntity, TId> : IEntityTypeConfigu
 
         builder.Property(e => e.UpdatedAt);
 
-        builder.Property(e => e.CreatedBy)
-            .HasMaxLength(256);
-
-        builder.Property(e => e.UpdatedBy)
-            .HasMaxLength(256);
+        builder.ConfigureAuditFields();
+        builder.HasIndex(e => e.CreatedAt);
+        builder.HasIndex(e => e.UpdatedAt);
 
         builder.Ignore(e => e.DomainEvents);
 

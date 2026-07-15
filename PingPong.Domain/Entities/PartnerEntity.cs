@@ -21,7 +21,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         string contactLastName,
         string phone,
         string email,
-        string city,
+        CityId cityId,
         CategoryId categoryId,
         List<string> photos,
         bool isVerified,
@@ -33,7 +33,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         ContactLastName = contactLastName;
         Phone = phone;
         Email = email;
-        City = city;
+        CityId = cityId;
         CategoryId = categoryId;
         Photos = photos;
         IsVerified = isVerified;
@@ -54,7 +54,9 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
 
     public string Email { get; private set; } = string.Empty;
 
-    public string City { get; private set; } = string.Empty;
+    public CityId CityId { get; private set; } = default!;
+
+    public CityEntity? City { get; private set; }
 
     public CategoryId CategoryId { get; private set; } = default!;
 
@@ -72,7 +74,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         string contactLastName,
         string phone,
         string email,
-        string city,
+        CityId cityId,
         CategoryId categoryId,
         List<string> photos,
         bool isVerified,
@@ -85,7 +87,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
             contactLastName,
             phone,
             email,
-            city,
+            cityId,
             categoryId,
             photos,
             isVerified,
@@ -100,7 +102,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         string contactLastName,
         string phone,
         string email,
-        string city,
+        CityId cityId,
         CategoryId categoryId,
         List<string> photos,
         bool isVerified,
@@ -111,7 +113,7 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         ContactLastName = contactLastName;
         Phone = phone;
         Email = email;
-        City = city;
+        CityId = cityId;
         CategoryId = categoryId;
         Photos = photos;
         IsVerified = isVerified;

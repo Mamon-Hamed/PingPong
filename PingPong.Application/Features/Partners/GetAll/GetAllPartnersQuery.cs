@@ -15,7 +15,7 @@ public sealed record GetAllPartnersQuery : GetAllQuery<PartnerResponse>
 
     public string? Email { get;  set; }
 
-    public string? City { get;  set; }
+    public Guid? CityId { get;  set; }
 
     public Guid? CategoryId { get;  set; } 
 

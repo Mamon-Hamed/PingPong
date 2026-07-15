@@ -9,7 +9,7 @@ public record PartnerResponse(
     string ContactLastName,
     string Phone,
     string Email,
-    string City,
+    Guid CityId,
     Guid CategoryId,
     List<string> Photos,
     bool IsVerified,

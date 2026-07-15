@@ -55,6 +55,8 @@ public static class DependencyInjection
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ISubscriptionPlanRepository, SubscriptionPlanRepository>();
         services.AddScoped<IPartnerRepository, PartnerRepository>();
+        services.AddScoped<ICountryRepository, CountryRepository>();
+        services.AddScoped<ICityRepository, CityRepository>();
     }
 
     private static void AddIdentityConfiguration(this IServiceCollection services)

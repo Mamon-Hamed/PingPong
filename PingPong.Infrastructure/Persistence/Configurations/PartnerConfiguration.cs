@@ -7,18 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Domain.Entities;
+using PingPong.Infrastructure.Persistence.Converters;
 
-internal sealed class PartnerConfiguration : IEntityTypeConfiguration<PartnerEntity>
+internal sealed class PartnerConfiguration : BaseEntityConfiguration<PartnerEntity, PartnerId>
 {
-    public void Configure(EntityTypeBuilder<PartnerEntity> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<PartnerEntity> builder)
     {
-        builder.HasKey(p => p.Id);
-
-        builder.Property(p => p.Id)
-            .HasConversion(
-                partnerId => partnerId.Value,
-                value => new PartnerId(value));
-
         builder.Property(p => p.CompanyName)
             .HasMaxLength(200)
             .IsRequired();
@@ -39,8 +33,8 @@ internal sealed class PartnerConfiguration : IEntityTypeConfiguration<PartnerEnt
             .HasMaxLength(200)
             .IsRequired();
 
-        builder.Property(p => p.City)
-            .HasMaxLength(100)
+        builder.Property(p => p.CityId)
+            .HasConversion(new StronglyTypedIdValueConverter<CityId>())
             .IsRequired();
 
         builder.Property(p => p.CategoryId)
@@ -69,6 +63,11 @@ internal sealed class PartnerConfiguration : IEntityTypeConfiguration<PartnerEnt
         builder.HasOne(p => p.Category)
             .WithMany()
             .HasForeignKey(p => p.CategoryId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasOne(p => p.City)
+            .WithMany()
+            .HasForeignKey(p => p.CityId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

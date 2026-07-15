@@ -17,7 +17,7 @@ public sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerReposit
             entity.ContactLastName,
             entity.Phone,
             entity.Email,
-            entity.City,
+            entity.CityId.Value,
             entity.CategoryId.Value,
             entity.Photos,
             entity.IsVerified,

@@ -14,7 +14,55 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="" />
+    <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/wwwroot/uploads/3abd628837de4a5891fa55aca2cd3bd3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/wwwroot/uploads/40deb1d22c2446f4b92c2479c351784e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/RegisterCommandValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/PartnerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Entities/PartnerEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Primitives/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306090311_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306090311_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306092053_AddRefreshToken.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306092053_AddRefreshToken.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306122401_AddNewEntitiesAndRemovePlayer.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260306122401_AddNewEntitiesAndRemovePlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260411091438_UpdateAuditProperties.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260411091438_UpdateAuditProperties.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CategoryConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CategoryConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/IdentityConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/IdentityConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PartnerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PartnerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/SubscriptionPlanConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/SubscriptionPlanConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +86,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c6518e768ca041e8ab72bb5924c784811d7910/3a/088081be/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7359108b69f4d7c8bcac88ec1e70a7811600/70/22bf0c6d/ICacheKeyGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d382df578ec93391918cfaa4ce7f4b8f35c9aed1241d6556dc9be26df13c/IdentityUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f81314fb91227f6315de888f7e6388218876030c955c2ab607f6468b5ccdb23/IdentityRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -132,6 +182,65 @@
     <urls />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.002718942594279E-84" />
+      <entry key="S5" value="3.3162556448784066E-34" />
+      <entry key="S10" value="1.8210683247291154E-17" />
+      <entry key="S30" value="2.759664023346614E-6" />
+      <entry key="S60" value="0.0030459202513057754" />
+      <entry key="M2" value="0.22062062916318934" />
+      <entry key="M5" value="4.130329863471291" />
+      <entry key="M10" value="14.903484651003044" />
+      <entry key="M15" value="27.032133686846993" />
+      <entry key="M30" value="56.099738989662214" />
+      <entry key="H1" value="85.07278065376835" />
+      <entry key="H2" value="105.99414292562489" />
+      <entry key="H4" value="118.63088163946226" />
+      <entry key="D1" value="130.4746475547458" />
+      <entry key="W1" value="132.63589730976682" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0000000000000462" />
+      <entry key="MS500" value="1.0021521584294466" />
+      <entry key="S2" value="1.2153865399280042" />
+      <entry key="S5" value="1.5411123222628573" />
+      <entry key="S10" value="1.7356033729278693" />
+      <entry key="S30" value="1.9027160765754867" />
+      <entry key="S60" value="1.9535090137839117" />
+      <entry key="M2" value="2.0896555320901924" />
+      <entry key="M5" value="3.243248922827959" />
+      <entry key="M10" value="5.104284606236092" />
+      <entry key="M15" value="6.32948644663162" />
+      <entry key="M30" value="8.163956087845014" />
+      <entry key="H1" value="9.422602193045309" />
+      <entry key="H2" value="10.1660234289342" />
+      <entry key="H4" value="10.570922526258606" />
+      <entry key="D1" value="10.926737954903817" />
+      <entry key="W1" value="10.98949020991075" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.0012885819441141658" />
+      <entry key="MS500" value="0.2646611389347203" />
+      <entry key="S2" value="0.8589812821062495" />
+      <entry key="S5" value="1.3334486339727132" />
+      <entry key="S10" value="1.6124228065473958" />
+      <entry key="S30" value="1.8560567339581104" />
+      <entry key="S60" value="1.9323222594038498" />
+      <entry key="M2" value="2.2963860715136932" />
+      <entry key="M5" value="7.3620390651938115" />
+      <entry key="M10" value="19.99720167345867" />
+      <entry key="M15" value="33.35241186783954" />
+      <entry key="M30" value="64.25741139023731" />
+      <entry key="H1" value="94.4916419017302" />
+      <entry key="H2" value="116.15811438960769" />
+      <entry key="H4" value="129.20072803646923" />
+      <entry key="D1" value="141.40119873964247" />
+      <entry key="W1" value="143.62536065044728" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -146,7 +255,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.PingPong: http.executor": "Run",
-    ".NET Launch Settings Profile.PingPong: https.executor": "Debug",
+    ".NET Launch Settings Profile.PingPong: https.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -223,7 +332,8 @@
       <workItem from="1775878040572" duration="2315000" />
       <workItem from="1775895977488" duration="335000" />
       <workItem from="1775896398326" duration="14489000" />
-      <workItem from="1784104805919" duration="411000" />
+      <workItem from="1784104805919" duration="1506000" />
+      <workItem from="1784106366561" duration="6958000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -297,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784104861048</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update IDE configuration files">
+      <option name="closed" value="true" />
+      <created>1784105247066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784105247066</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,12 +439,12 @@
     <MESSAGE value="use mediator cortex" />
     <MESSAGE value="add initial infrastructure migrations including identity and refresh tokens" />
     <MESSAGE value="init" />
-    <MESSAGE value="update IDE configuration files" />
     <MESSAGE value="add file upload, removal, and orphan cleanup functionality" />
     <MESSAGE value="update audit properties in database and make command handlers public" />
     <MESSAGE value="remove unused usings across multiple projects" />
     <MESSAGE value="refactor authentication services to use strongly-typed request and response objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor authentication services to use strongly-typed request and response objects" />
+    <MESSAGE value="update IDE configuration files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update IDE configuration files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

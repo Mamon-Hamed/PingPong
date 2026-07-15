@@ -12,7 +12,9 @@ public abstract class Entity<TId> : IAuditableEntity, IHasDomainEvents, IEquatab
         Id = id;
     }
 
-    protected Entity() { }
+    protected Entity()
+    {
+    }
 
     public TId Id { get; private init; } = default!;
 

@@ -15,9 +15,9 @@ public sealed class RefreshTokenCommandHandler(
         var principal = tokenService.GetPrincipalFromExpiredToken(request.AccessToken);
         var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var email = principal.FindFirst(ClaimTypes.Email)?.Value;
-        var fullName = principal.FindFirst(ClaimTypes.Name)?.Value;
+        var userName = principal.FindFirst(ClaimTypes.Name)?.Value;
 
-        if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(fullName))
+        if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName))
         {
             throw new BadRequestException("Invalid access token.");
         }
@@ -34,7 +34,9 @@ public sealed class RefreshTokenCommandHandler(
             .Select(c => c.Value)
             .ToList();
 
-        var token = await tokenService.GenerateTokenAsync(userId, email, fullName, roles, cancellationToken);
+        var token = await tokenService.GenerateTokenAsync(userId, email, userName, roles, cancellationToken);
+
+        await identityService.UpdateLastLoginAsync(userId);
 
         await identityService.UpdateRefreshTokenAsync(new UpdateRefreshTokenRequest(userId, token.RefreshToken, token.ExpiresAtUtc.AddDays(7)));
 

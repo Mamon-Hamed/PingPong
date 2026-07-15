@@ -6,17 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Domain.Entities;
 
-internal sealed class SubscriptionPlanConfiguration : IEntityTypeConfiguration<SubscriptionPlanEntity>
+internal sealed class SubscriptionPlanConfiguration : BaseEntityConfiguration<SubscriptionPlanEntity, SubscriptionPlanId>
 {
-    public void Configure(EntityTypeBuilder<SubscriptionPlanEntity> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<SubscriptionPlanEntity> builder)
     {
-        builder.HasKey(sp => sp.Id);
-
-        builder.Property(sp => sp.Id)
-            .HasConversion(
-                planId => planId.Value,
-                value => new SubscriptionPlanId(value));
-
         builder.Property(sp => sp.PlanName)
             .HasMaxLength(100)
             .IsRequired();

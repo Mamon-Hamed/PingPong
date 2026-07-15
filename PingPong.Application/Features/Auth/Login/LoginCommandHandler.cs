@@ -11,12 +11,25 @@ public sealed class LoginCommandHandler(
 {
     public async Task<Result<LoginResponse>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var response = await identityService.ValidateCredentialsAsync(new ValidateCredentialsRequest(request.Email, request.Password));
+        var response = await identityService.ValidateCredentialsAsync(new ValidateCredentialsRequest(
+            request.Email, 
+            request.Password,
+            request.Address,
+            request.Latitude,
+            request.Longitude,
+            request.DeviceId,
+            request.DeviceName,
+            request.DeviceType,
+            request.OperatingSystem,
+            request.CountryId,
+            request.CityId));
 
         if (!response.Succeeded)
             throw new BadRequestException("Invalid email or password.");
 
-        var token = await tokenService.GenerateTokenAsync(response.UserId, response.Email, response.FullName, response.Roles, cancellationToken);
+        var token = await tokenService.GenerateTokenAsync(response.UserId, response.Email, response.UserName, response.Roles, cancellationToken);
+
+        await identityService.UpdateLastLoginAsync(response.UserId);
 
         await identityService.UpdateRefreshTokenAsync(new UpdateRefreshTokenRequest(response.UserId, token.RefreshToken, token.ExpiresAtUtc.AddDays(7)));
 
