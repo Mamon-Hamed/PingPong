@@ -3,4 +3,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.GetById;
 
-public sealed record GetPartnerByIdQuery(Guid Id) : GetByIdQuery<PartnerId, PartnerResponse>(Id);
+public sealed record GetPartnerByIdQuery(
+    Guid Id,
+    double UserLatitude,
+    double UserLongitude) : GetByIdQuery<PartnerId, PartnerResponse>(Id);

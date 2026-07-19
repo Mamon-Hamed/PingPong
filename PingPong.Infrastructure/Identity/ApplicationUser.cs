@@ -7,10 +7,12 @@ public class ApplicationUser : IdentityUser
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     public DateTime? LastLoginUtc { get; set; }
     public bool IsActive { get; set; } = true;
+    public string? AvatarUrl { get; set; }
     
     public List<RefreshToken> RefreshTokens { get; set; } = [];
     public List<UserLocation> Locations { get; set; } = [];
     public List<RegisteredDevice> RegisteredDevices { get; set; } = [];
+    public List<UserFavoritePartner> FavoritePartners { get; set; } = [];
     
     public Guid? CountryId { get; set; }
     public Guid? CityId { get; set; }

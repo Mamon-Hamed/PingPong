@@ -1,5 +1,7 @@
 ﻿using PingPong.Application.Abstractions.Messaging;
 
+using PingPong.Application.Features.Auth.Login;
+
 namespace PingPong.Application.Features.Auth.Register;
 
 public sealed record AdminRegisterCommand(
@@ -15,4 +17,4 @@ public sealed record AdminRegisterCommand(
     string? DeviceType = null,
     string? OperatingSystem = null,
     Guid? CountryId = null,
-    Guid? CityId = null) : ICommand;
+    Guid? CityId = null) : ICommand<LoginResponse>;

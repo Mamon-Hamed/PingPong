@@ -1,13 +1,16 @@
 ﻿using PingPong.Application.Abstractions.Authentication;
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Common;
+using PingPong.Application.Features.Auth.Login;
 using PingPong.Domain.Exceptions;
 
 namespace PingPong.Application.Features.Auth.Register;
 
-public sealed class UserRegisterCommandHandler(IIdentityService identityService) : ICommandHandler<UserRegisterCommand>
+public sealed class UserRegisterCommandHandler(
+    IIdentityService identityService,
+    ITokenService tokenService) : ICommandHandler<UserRegisterCommand, LoginResponse>
 {
-    public async Task<Result> Handle(UserRegisterCommand request, CancellationToken cancellationToken)
+    public async Task<Result<LoginResponse>> Handle(UserRegisterCommand request, CancellationToken cancellationToken)
     {
         var response = await identityService.RegisterUserAsync(new UserRegisterRequest(
             request.UserName,
@@ -22,7 +25,8 @@ public sealed class UserRegisterCommandHandler(IIdentityService identityService)
             request.DeviceType,
             request.OperatingSystem,
             request.CountryId,
-            request.CityId));
+            request.CityId,
+            request.AvatarUrl));
 
         if (!response.Succeeded)
         {
@@ -33,6 +37,18 @@ public sealed class UserRegisterCommandHandler(IIdentityService identityService)
             throw new ValidationException(errorDict);
         }
 
-        return Result.Success();
+        var roles = new List<string> { "User" }; // Default role for user registration
+
+        var token = await tokenService.GenerateTokenAsync(
+            response.UserId,
+            request.Email,
+            request.UserName,
+            roles,
+            cancellationToken);
+
+        return Result.Success(new LoginResponse(
+            token.AccessToken,
+            token.RefreshToken,
+            token.ExpiresAtUtc));
     }
 }

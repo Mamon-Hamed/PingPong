@@ -1,9 +1,9 @@
 namespace PingPong.Application.Features.Categories.Create;
 
-using Abstractions.Messaging;
-using Domain.Entities;
-using Domain.Repositories;
-using Common;
+using PingPong.Application.Abstractions.Messaging;
+using PingPong.Domain.Entities.Categories;
+using PingPong.Domain.Repositories;
+using PingPong.Application.Common;
 
 public sealed class CreateCategoryCommandHandler(
     ICategoryRepository categoryRepository,

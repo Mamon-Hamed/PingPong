@@ -1,5 +1,7 @@
 ﻿using PingPong.Application.Abstractions.Messaging;
 
+using PingPong.Application.Features.Auth.Login;
+
 namespace PingPong.Application.Features.Auth.Register;
 
 public sealed record UserRegisterCommand(
@@ -16,4 +18,5 @@ public sealed record UserRegisterCommand(
     string? DeviceType = null,
     string? OperatingSystem = null,
     Guid? CountryId = null,
-    Guid? CityId = null) : ICommand;
+    Guid? CityId = null,
+    string? AvatarUrl = null) : ICommand<LoginResponse>;

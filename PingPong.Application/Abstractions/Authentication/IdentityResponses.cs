@@ -8,3 +8,15 @@ public sealed record IdentityValidationResponse(
     string Email,
     string UserName,
     IList<string> Roles);
+
+public sealed record UserIdentityResponse(
+    string Id,
+    string UserName,
+    string Email,
+    string? PhoneNumber,
+    string? AvatarUrl,
+    bool IsActive,
+    DateTime CreatedAtUtc,
+    DateTime? LastLoginUtc,
+    Guid? CountryId,
+    Guid? CityId);

@@ -1,16 +1,53 @@
-namespace PingPong.Application.Features.Partners;
+using PingPong.Domain.Entities.Partners;
 
-using Domain.Entities;
+namespace PingPong.Application.Features.Partners;
 
 public record PartnerResponse(
     Guid Id,
-    string CompanyName,
-    string ContactFirstName,
-    string ContactLastName,
+    string Name,
     string Phone,
-    string Email,
-    Guid CityId,
+    string MediaUrl,
+    DateTime? ValidUntil,
+    List<string> Gallery,
     Guid CategoryId,
-    List<string> Photos,
+    Guid CountryId,
+    Guid CityId,
+    LocationResponse Location,
+    int Views,
     bool IsVerified,
-    SubscriptionStatus SubscriptionStatus);
+    SubscriptionStatus SubscriptionStatus,
+    List<OpeningHourResponse> OpeningHours,
+    List<ServiceResponse> Services,
+    List<ReviewResponse> Reviews,
+    double Rating,
+    double Distance,
+    string DiscountText);
+
+public record LocationResponse(
+    double Latitude,
+    double Longitude,
+    string City,
+    string Country,
+    string Address);
+
+public record OpeningHourResponse(
+    DayOfWeek Day,
+    string Start,
+    string End,
+    bool IsClosed);
+
+public record ServiceResponse(
+    Guid Id,
+    string Name,
+    string Media,
+    decimal Cost,
+    double DiscountPercentage,
+    decimal CostAfterDiscount);
+
+public record ReviewResponse(
+    Guid Id,
+    string AuthorName,
+    string AuthorAvatar,
+    double Rating,
+    string Comment,
+    DateTime Date);

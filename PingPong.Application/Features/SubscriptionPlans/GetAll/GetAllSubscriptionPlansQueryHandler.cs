@@ -1,6 +1,6 @@
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Shared.Extensions;
-using PingPong.Domain.Entities;
+using PingPong.Domain.Entities.Subscriptions;
 using PingPong.Domain.Repositories;
 using PingPong.Domain.StronglyTypes;
 

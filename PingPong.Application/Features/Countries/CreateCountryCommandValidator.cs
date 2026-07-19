@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using PingPong.Domain.Constants;
 
 namespace PingPong.Application.Features.Countries;
 
@@ -6,7 +7,12 @@ public sealed class CreateCountryCommandValidator : AbstractValidator<CreateCoun
 {
     public CreateCountryCommandValidator()
     {
-        RuleFor(x => x.Name).NotEmpty().MaximumLength(256);
-        RuleFor(x => x.Code).NotEmpty().MaximumLength(10);
+        RuleFor(x => x.Name)
+            .NotEmpty()
+            .MaximumLength(StringLengths.Length200);
+
+        RuleFor(x => x.Code)
+            .NotEmpty()
+            .MaximumLength(StringLengths.Length10);
     }
 }

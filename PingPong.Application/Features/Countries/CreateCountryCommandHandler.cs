@@ -1,6 +1,6 @@
 ﻿using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Common;
-using PingPong.Domain.Entities;
+using PingPong.Domain.Entities.Locations;
 using PingPong.Domain.Repositories;
 
 namespace PingPong.Application.Features.Countries;

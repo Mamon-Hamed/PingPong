@@ -1,7 +1,6 @@
 using PingPong.Domain.StronglyTypes;
+using PingPong.Domain.Entities.Categories;
 
 namespace PingPong.Domain.Repositories;
-
-using Entities;
 
 public interface ICategoryRepository : IRepository<CategoryEntity, CategoryId>;

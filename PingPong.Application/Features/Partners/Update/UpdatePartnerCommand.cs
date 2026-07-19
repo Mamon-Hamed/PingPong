@@ -1,17 +1,24 @@
-namespace PingPong.Application.Features.Partners.Update;
+using PingPong.Application.Abstractions.Messaging;
+using PingPong.Domain.Entities.Partners;
 
-using Abstractions.Messaging;
-using Domain.Entities;
+namespace PingPong.Application.Features.Partners.Update;
 
 public sealed record UpdatePartnerCommand(
     Guid Id,
-    string CompanyName,
-    string ContactFirstName,
-    string ContactLastName,
+    string Name,
     string Phone,
-    string Email,
-    Guid CityId,
+    string MediaUrl,
+    DateTime? ValidUntil,
+    List<string> Gallery,
     Guid CategoryId,
-    List<string> Photos,
-    bool IsVerified,
+    Guid CountryId,
+    Guid CityId,
+    UpdateLocationRequest Location,
     SubscriptionStatus SubscriptionStatus) : ICommand;
+
+public record UpdateLocationRequest(
+    double Latitude,
+    double Longitude,
+    string City,
+    string Country,
+    string Address);

@@ -1,6 +1,6 @@
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Domain.Repositories;
-using PingPong.Domain.Entities;
+using PingPong.Domain.Entities.Partners;
 using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Partners.Delete;

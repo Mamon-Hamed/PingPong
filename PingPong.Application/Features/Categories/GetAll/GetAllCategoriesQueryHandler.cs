@@ -1,7 +1,7 @@
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Shared.Extensions;
 using PingPong.Domain.Repositories;
-using PingPong.Domain.Entities;
+using PingPong.Domain.Entities.Categories;
 using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Application.Features.Categories.GetAll;

@@ -27,7 +27,8 @@ public sealed record UserRegisterRequest(
     string? DeviceType = null,
     string? OperatingSystem = null,
     Guid? CountryId = null,
-    Guid? CityId = null);
+    Guid? CityId = null,
+    string? AvatarUrl = null);
 
 public sealed record ValidateCredentialsRequest(
     string Email, 
@@ -45,3 +46,13 @@ public sealed record ValidateCredentialsRequest(
 public sealed record ValidateRefreshTokenRequest(string UserId, string RefreshToken);
 
 public sealed record UpdateRefreshTokenRequest(string UserId, string NewRefreshToken, DateTime ExpiresAtUtc);
+
+public sealed record UpdateUserIdentityRequest(
+    string Id,
+    string UserName,
+    string Email,
+    string? PhoneNumber,
+    string? AvatarUrl,
+    bool IsActive,
+    Guid? CountryId,
+    Guid? CityId);

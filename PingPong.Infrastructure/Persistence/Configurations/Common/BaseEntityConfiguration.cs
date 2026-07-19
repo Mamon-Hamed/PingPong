@@ -1,0 +1,37 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PingPong.Domain.Primitives;
+using PingPong.Domain.StronglyTypes;
+using PingPong.Infrastructure.Persistence.Configurations.Extensions;
+using PingPong.Infrastructure.Persistence.Converters;
+
+namespace PingPong.Infrastructure.Persistence.Configurations.Common;
+
+public abstract class BaseEntityConfiguration<TEntity, TId> : IEntityTypeConfiguration<TEntity>
+    where TEntity : Entity<TId>
+    where TId : StronglyTypedId
+{
+    public void Configure(EntityTypeBuilder<TEntity> builder)
+    {
+        builder.HasKey(e => e.Id);
+
+        builder.Property(e => e.Id)
+            .HasConversion(new StronglyTypedIdValueConverter<TId>())
+            .ValueGeneratedNever();
+
+        builder.Property(e => e.CreatedAt)
+            .IsRequired();
+
+        builder.Property(e => e.UpdatedAt);
+
+        builder.ConfigureAuditFields();
+        builder.HasIndex(e => e.CreatedAt);
+        builder.HasIndex(e => e.UpdatedAt);
+
+        builder.Ignore(e => e.DomainEvents);
+
+        ConfigureEntity(builder);
+    }
+
+    protected abstract void ConfigureEntity(EntityTypeBuilder<TEntity> builder);
+}

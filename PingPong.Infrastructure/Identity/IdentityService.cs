@@ -1,3 +1,5 @@
+using PingPong.Application.Common;
+using PingPong.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PingPong.Application.Abstractions.Authentication;
@@ -59,7 +61,8 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
             Email = request.Email,
             PhoneNumber = request.PhoneNumber,
             CountryId = request.CountryId,
-            CityId = request.CityId
+            CityId = request.CityId,
+            AvatarUrl = request.AvatarUrl
         };
 
         if (!string.IsNullOrEmpty(request.Address))
@@ -206,4 +209,68 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
 
         await userManager.UpdateAsync(user);
     }
+
+    public async Task<Result<UserIdentityResponse>> GetUserByIdAsync(string userId)
+    {
+        var user = await userManager.FindByIdAsync(userId);
+        if (user is null)
+        {
+            return Result.Failure<UserIdentityResponse>("User not found.");
+        }
+
+        return Result.Success(Map(user));
+    }
+
+    public async Task<Result<PaginatedList<UserIdentityResponse>>> GetAllUsersAsync(int page, int pageSize)
+    {
+        var query = userManager.Users.AsNoTracking();
+        var count = await query.CountAsync();
+        var users = await query
+            .OrderByDescending(u => u.CreatedAtUtc)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        var response = users.Select(Map).ToList();
+        return Result.Success(new PaginatedList<UserIdentityResponse>(response, count, page, pageSize));
+    }
+
+    public async Task<Result> UpdateUserAsync(UpdateUserIdentityRequest request)
+    {
+        var user = await userManager.FindByIdAsync(request.Id);
+        if (user is null)
+        {
+            return Result.Failure("User not found.");
+        }
+
+        user.UserName = request.UserName;
+        user.Email = request.Email;
+        user.PhoneNumber = request.PhoneNumber;
+        user.AvatarUrl = request.AvatarUrl;
+        user.IsActive = request.IsActive;
+        user.CountryId = request.CountryId;
+        user.CityId = request.CityId;
+
+        var result = await userManager.UpdateAsync(user);
+        return result.Succeeded 
+            ? Result.Success() 
+            : Result.Failure(string.Join(", ", result.Errors.Select(e => e.Description)));
+    }
+
+    public async Task<Result> DeleteUserAsync(string userId)
+    {
+        var user = await userManager.FindByIdAsync(userId);
+        if (user is null)
+        {
+            return Result.Failure("User not found.");
+        }
+
+        var result = await userManager.DeleteAsync(user);
+        return result.Succeeded 
+            ? Result.Success() 
+            : Result.Failure(string.Join(", ", result.Errors.Select(e => e.Description)));
+    }
+
+    private static UserIdentityResponse Map(ApplicationUser user) =>
+        new(user.Id, user.UserName!, user.Email!, user.PhoneNumber, user.AvatarUrl, user.IsActive, user.CreatedAtUtc, user.LastLoginUtc, user.CountryId, user.CityId);
 }

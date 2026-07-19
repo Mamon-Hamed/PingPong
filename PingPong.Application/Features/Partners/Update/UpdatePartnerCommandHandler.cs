@@ -1,4 +1,5 @@
 using PingPong.Domain.StronglyTypes;
+using PingPong.Domain.Models;
 
 namespace PingPong.Application.Features.Partners.Update;
 
@@ -22,18 +23,25 @@ public sealed class UpdatePartnerCommandHandler(
         }
 
         var categoryId = new CategoryId(request.CategoryId);
+        var countryId = new CountryId(request.CountryId);
         var cityId = new CityId(request.CityId);
+        var location = new Location(
+            request.Location.Latitude,
+            request.Location.Longitude,
+            request.Location.City,
+            request.Location.Country,
+            request.Location.Address);
 
         partner.Update(
-            request.CompanyName,
-            request.ContactFirstName,
-            request.ContactLastName,
+            request.Name,
             request.Phone,
-            request.Email,
-            cityId,
+            request.MediaUrl,
+            request.ValidUntil,
+            request.Gallery,
             categoryId,
-            request.Photos,
-            request.IsVerified,
+            countryId,
+            cityId,
+            location,
             request.SubscriptionStatus);
 
         partnerRepository.Update(partner);

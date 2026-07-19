@@ -1,4 +1,4 @@
-﻿using PingPong.Domain.Entities;
+﻿using PingPong.Domain.Entities.Locations;
 using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Repositories;

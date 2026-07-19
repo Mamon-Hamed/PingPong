@@ -31,11 +31,24 @@ public sealed class CleanUpOrphanFilesCommandHandler(
             .ToList();
 
         var partners = await partnerRepository.GetAsNoTrackingAsync().ToListAsync(cancellationToken);
-        var partnerPhotos = partners
-            .SelectMany(p => p.Photos)
+        var partnerMedia = partners
+            .Select(p => p.MediaUrl)
+            .Where(u => !string.IsNullOrEmpty(u))
+            .Concat(partners.SelectMany(p => p.Gallery))
             .ToList();
 
-        var allUsedUrls = categoryIcons.Concat(partnerPhotos).ToHashSet();
+        var services = await partnerRepository.GetAsNoTrackingAsync()
+            .SelectMany(p => p.Services)
+            .ToListAsync(cancellationToken);
+        var serviceMedia = services
+            .Select(s => s.Media)
+            .Where(m => !string.IsNullOrEmpty(m))
+            .ToList();
+
+        var allUsedUrls = categoryIcons
+            .Concat(partnerMedia)
+            .Concat(serviceMedia)
+            .ToHashSet();
         var allUsedFileNames = allUsedUrls
             .Select(u => Path.GetFileName(u))
             .Where(name => name != null)

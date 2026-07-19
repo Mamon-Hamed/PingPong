@@ -1,11 +1,12 @@
 using PingPong.Domain.StronglyTypes;
+using PingPong.Domain.Models;
 
 namespace PingPong.Application.Features.Partners.Create;
 
-using Abstractions.Messaging;
-using Domain.Entities;
-using Domain.Repositories;
-using Common;
+using PingPong.Application.Abstractions.Messaging;
+using PingPong.Domain.Entities.Partners;
+using PingPong.Domain.Repositories;
+using PingPong.Application.Common;
 
 public sealed class CreatePartnerCommandHandler(
     IPartnerRepository partnerRepository,
@@ -15,18 +16,25 @@ public sealed class CreatePartnerCommandHandler(
     public async Task<Result<Guid>> Handle(CreatePartnerCommand request, CancellationToken cancellationToken)
     {
         var categoryId = new CategoryId(request.CategoryId);
+        var countryId = new CountryId(request.CountryId);
         var cityId = new CityId(request.CityId);
+        var location = new Location(
+            request.Location.Latitude,
+            request.Location.Longitude,
+            request.Location.City,
+            request.Location.Country,
+            request.Location.Address);
         
         var partner = PartnerEntity.Create(
-            request.CompanyName,
-            request.ContactFirstName,
-            request.ContactLastName,
+            request.Name,
             request.Phone,
-            request.Email,
-            cityId,
+            request.MediaUrl,
+            request.ValidUntil,
+            request.Gallery,
             categoryId,
-            request.Photos,
-            request.IsVerified,
+            countryId,
+            cityId,
+            location,
             request.SubscriptionStatus);
 
         partnerRepository.Add(partner);

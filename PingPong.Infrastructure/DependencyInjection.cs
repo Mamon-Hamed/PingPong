@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using PingPong.Application.Abstractions.Authentication;
+using PingPong.Application.Abstractions;
 using PingPong.Domain.Repositories;
 using PingPong.Infrastructure.Authentication;
 using PingPong.Infrastructure.Identity;
@@ -57,6 +58,10 @@ public static class DependencyInjection
         services.AddScoped<IPartnerRepository, PartnerRepository>();
         services.AddScoped<ICountryRepository, CountryRepository>();
         services.AddScoped<ICityRepository, CityRepository>();
+        services.AddScoped<ISupportRepository, SupportRepository>();
+        services.AddScoped<INotificationRepository, NotificationRepository>();
+        services.AddScoped<IReviewRepository, ReviewRepository>();
+        services.AddScoped<IDataSeeder, DataSeeder>();
     }
 
     private static void AddIdentityConfiguration(this IServiceCollection services)

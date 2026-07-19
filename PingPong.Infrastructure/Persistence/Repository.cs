@@ -16,7 +16,7 @@ public abstract class Repository<TEntity, TId>(AppDbContext dbContext) : IReposi
     protected readonly AppDbContext DbContext = dbContext;
     protected readonly DbSet<TEntity> DbSet = dbContext.Set<TEntity>();
 
-    public async Task<TEntity?> GetByIdAsync(TId id, CancellationToken cancellationToken = default)
+    public virtual async Task<TEntity?> GetByIdAsync(TId id, CancellationToken cancellationToken = default)
     {
         return await DbSet.FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
     }

@@ -1,13 +1,16 @@
 ﻿using PingPong.Application.Abstractions.Authentication;
 using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Common;
+using PingPong.Application.Features.Auth.Login;
 using PingPong.Domain.Exceptions;
 
 namespace PingPong.Application.Features.Auth.Register;
 
-public sealed class AdminRegisterCommandHandler(IIdentityService identityService) : ICommandHandler<AdminRegisterCommand>
+public sealed class AdminRegisterCommandHandler(
+    IIdentityService identityService,
+    ITokenService tokenService) : ICommandHandler<AdminRegisterCommand, LoginResponse>
 {
-    public async Task<Result> Handle(AdminRegisterCommand request, CancellationToken cancellationToken)
+    public async Task<Result<LoginResponse>> Handle(AdminRegisterCommand request, CancellationToken cancellationToken)
     {
         var response = await identityService.RegisterAdminAsync(new AdminRegisterRequest(
             request.UserName,
@@ -32,6 +35,18 @@ public sealed class AdminRegisterCommandHandler(IIdentityService identityService
             throw new ValidationException(errorDict);
         }
 
-        return Result.Success();
+        var roles = new List<string> { "Admin" };
+
+        var token = await tokenService.GenerateTokenAsync(
+            response.UserId,
+            request.Email,
+            request.UserName,
+            roles,
+            cancellationToken);
+
+        return Result.Success(new LoginResponse(
+            token.AccessToken,
+            token.RefreshToken,
+            token.ExpiresAtUtc));
     }
 }

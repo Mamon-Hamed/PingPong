@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using PingPong.Application.Common;
 using PingPong.Application.Features.Auth.Login;
 using PingPong.Application.Features.Auth.RefreshToken;
 using PingPong.Application.Features.Auth.Register;
@@ -13,9 +12,7 @@ public sealed class AuthController : BaseApiController
     {
         var result = await Mediator.SendCommandAsync(command);
 
-        return result.IsSuccess
-            ? StatusCode(StatusCodes.Status201Created, ApiResponse.Created("Admin account created successfully."))
-            : BadRequest(ApiResponse.Fail(400, result.Error!));
+        return HandleResult(result);
     }
 
     [HttpPost("register/user")]
@@ -23,9 +20,7 @@ public sealed class AuthController : BaseApiController
     {
         var result = await Mediator.SendCommandAsync(command);
 
-        return result.IsSuccess
-            ? StatusCode(StatusCodes.Status201Created, ApiResponse.Created("User account created successfully."))
-            : BadRequest(ApiResponse.Fail(400, result.Error!));
+        return HandleResult(result);
     }
 
     [HttpPost("login")]
