@@ -25,8 +25,8 @@ public sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerReposit
             return Result.Failure<PartnerDetailsResponse>("The requested entity was not found.");
         }
 
-        var isFavorite = currentUser.FavoritePartnerIds.Contains(partner.Id);
-        partner = partner with { IsFavorite = isFavorite };
+        // var isFavorite = currentUser.FavoritePartnerIds.Contains(partner.Id);
+        // partner = partner with { IsFavorite = isFavorite };
 
         var userLat = request.UserLatitude;
         var userLon = request.UserLongitude;

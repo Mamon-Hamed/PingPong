@@ -4,4 +4,5 @@ using Abstractions.Messaging;
 
 public sealed record CreateCategoryCommand(
     string Name,
-    string? IconUrl) : ICommand<Guid>;
+    string? IconUrl,
+    string? Color) : ICommand<Guid>;

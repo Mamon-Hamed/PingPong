@@ -1,4 +1,5 @@
-﻿using PingPong.Application.Abstractions.Messaging;
+﻿using PingPong.Application.Abstractions.Authentication;
+using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Common;
 using PingPong.Domain.Repositories;
 using PingPong.Domain.StronglyTypes;
@@ -7,7 +8,9 @@ namespace PingPong.Application.Features.Support.Update;
 
 public sealed class UpdateSupportCommandHandler(
     ISupportRepository supportRepository,
-    IUnitOfWork unitOfWork)
+    IUnitOfWork unitOfWork,
+    ICurrentUserService currentUserService,
+    IIdentityService identityService)
     : ICommandHandler<UpdateSupportCommand>
 {
     public async Task<Result> Handle(UpdateSupportCommand request, CancellationToken cancellationToken)
@@ -20,9 +23,23 @@ public sealed class UpdateSupportCommandHandler(
             return Result.Failure($"SupportMessage with id {request.Id} was not found.");
         }
 
+        var userId = currentUserService.UserId;
+        if (string.IsNullOrEmpty(userId))
+        {
+            return Result.Failure("User is not authenticated.");
+        }
+
+        var userResult = await identityService.GetUserByIdAsync(userId);
+        if (userResult.IsFailure)
+        {
+            return Result.Failure(userResult.Error!);
+        }
+
+        var user = userResult.Value;
+
         supportMessage.Update(
-            request.Name,
-            request.Email,
+            user!.UserName,
+            user.Email ?? string.Empty,
             request.Type,
             request.Message);
 

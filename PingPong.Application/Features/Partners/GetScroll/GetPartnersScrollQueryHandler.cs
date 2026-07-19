@@ -51,7 +51,6 @@ public sealed class GetPartnersScrollQueryHandler(IPartnerRepository repository,
 
         var totalCount = await query.CountAsync(cancellationToken);
 
-        var favoriteIds = currentUser.FavoritePartnerIds;
 
         var partners = await query.Select(p => new PartnerResponse(
                 p.Id.Value,
@@ -65,12 +64,13 @@ public sealed class GetPartnersScrollQueryHandler(IPartnerRepository repository,
                 p.Services.Count > 0 && p.Services.Any(s => s.DiscountPercentage > 0)
                     ? "up to " + p.Services.Max(s => s.DiscountPercentage) + "%"
                     : "",
-                favoriteIds.Contains(p.Id.Value)
+              false
             ))
-            .Skip((request.Page - 1) * request.PageSize)
-            .Take(request.PageSize)
+            .Skip(request.Skip)
+            .Take(request.Take)
             .ToListAsync(cancellationToken);
 
-        return Result.Success(new PaginatedList<PartnerResponse>(partners, totalCount, request.Page, request.PageSize));
+        return Result.Success(new PaginatedList<PartnerResponse>(partners, totalCount,
+            (request.Skip / request.Take) + 1, request.Take));
     }
 }

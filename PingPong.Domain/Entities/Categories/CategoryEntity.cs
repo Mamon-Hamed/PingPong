@@ -6,11 +6,12 @@ using Primitives;
 
 public sealed class CategoryEntity : AggregateRoot<CategoryId>
 {
-    private CategoryEntity(CategoryId id, string name, string? iconUrl)
+    private CategoryEntity(CategoryId id, string name, string? iconUrl, string? color)
         : base(id)
     {
         Name = name;
         IconUrl = iconUrl;
+        Color = color;
     }
 
     private CategoryEntity()
@@ -21,15 +22,18 @@ public sealed class CategoryEntity : AggregateRoot<CategoryId>
 
     public string? IconUrl { get; private set; }
 
-    public static CategoryEntity Create(string name, string? iconUrl)
+    public string? Color { get; private set; }
+
+    public static CategoryEntity Create(string name, string? iconUrl, string? color)
     {
-        var category = new CategoryEntity(CategoryId.New(), name, iconUrl);
+        var category = new CategoryEntity(CategoryId.New(), name, iconUrl, color);
         return category;
     }
 
-    public void Update(string name, string? iconUrl)
+    public void Update(string name, string? iconUrl, string? color)
     {
         Name = name;
         IconUrl = iconUrl;
+        Color = color;
     }
 }

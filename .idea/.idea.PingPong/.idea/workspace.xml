@@ -19,31 +19,38 @@
   <component name="ChangeListManager">
     <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/PartnersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/PartnersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ICurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ICurrentUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/ReviewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/ReviewsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/CategoryResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/CategoryResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetCategoryLookupQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetCategoryLookupQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetCategoryLookupQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetCategoryLookupQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewHandlers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewMessages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewMessages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Update/UpdateSupportCommandValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Categories/CategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Entities/Categories/CategoryEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260718171722_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260718171722_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Categories/CategoryConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Categories/CategoryConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/NotificationRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/NotificationRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +66,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="190" />
+    <option name="cachedIndexableFilesCount" value="191" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -162,61 +169,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.8707810280303675E-119" />
-      <entry key="S2" value="2.314728275919579E-30" />
-      <entry key="S5" value="1.3989525499678283E-12" />
-      <entry key="S10" value="1.1881272915823723E-6" />
-      <entry key="S30" value="0.01421525211980094" />
-      <entry key="S60" value="0.2084726100523114" />
-      <entry key="M2" value="0.9421382823971206" />
-      <entry key="M5" value="3.908756670935454" />
-      <entry key="M10" value="10.939024803856102" />
-      <entry key="M15" value="17.55077631340397" />
-      <entry key="M30" value="32.55002749423303" />
-      <entry key="H1" value="58.855575474818146" />
-      <entry key="H2" value="99.17424987202749" />
-      <entry key="H4" value="139.07312607830417" />
-      <entry key="D1" value="191.54283477394176" />
-      <entry key="W1" value="203.0059064786356" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000307572126" />
+      <entry key="S5" value="1.0009889601435378" />
+      <entry key="S10" value="1.0314477366997645" />
+      <entry key="S30" value="1.3156432198107466" />
+      <entry key="S60" value="1.5618213415408375" />
+      <entry key="M2" value="1.7495474244774893" />
+      <entry key="M5" value="1.8910860535631897" />
+      <entry key="M10" value="1.944026977968138" />
+      <entry key="M15" value="1.9670624719921441" />
+      <entry key="M30" value="2.5189256642370363" />
+      <entry key="H1" value="9.640845069886236" />
+      <entry key="H2" value="38.30408822156723" />
+      <entry key="H4" value="88.07035660362806" />
+      <entry key="D1" value="186.59892567629478" />
+      <entry key="W1" value="213.1880622517759" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000001955444604" />
-      <entry key="S2" value="1.0211560800000947" />
-      <entry key="S5" value="1.2410420723552276" />
-      <entry key="S10" value="1.6283013963570838" />
-      <entry key="S30" value="2.3641692110032393" />
-      <entry key="S60" value="3.005137495464438" />
-      <entry key="M2" value="4.1361123396661" />
-      <entry key="M5" value="6.6052626913001085" />
-      <entry key="M10" value="11.302711927842607" />
-      <entry key="M15" value="15.846025955663903" />
-      <entry key="M30" value="25.50777919644848" />
-      <entry key="H1" value="35.57156708036927" />
-      <entry key="H2" value="44.3145336634883" />
-      <entry key="H4" value="50.60539779438289" />
-      <entry key="D1" value="57.41575910164996" />
-      <entry key="W1" value="58.768514947155474" />
+      <entry key="MS100" value="6.81171411553304E-241" />
+      <entry key="MS500" value="1.200855593789493E-48" />
+      <entry key="S2" value="1.7059924630527242E-12" />
+      <entry key="S5" value="3.106181871989137E-5" />
+      <entry key="S10" value="0.009373362714932916" />
+      <entry key="S30" value="0.5019173706241266" />
+      <entry key="S60" value="1.4057358337519783" />
+      <entry key="M2" value="2.370399206445242" />
+      <entry key="M5" value="3.3497088365639827" />
+      <entry key="M10" value="3.930106980521776" />
+      <entry key="M15" value="4.210310661081875" />
+      <entry key="M30" value="4.973338369543504" />
+      <entry key="H1" value="9.580717424421369" />
+      <entry key="H2" value="22.219916487939834" />
+      <entry key="H4" value="38.65397431788666" />
+      <entry key="D1" value="64.64055091741976" />
+      <entry key="W1" value="70.892680272404" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.133364007721933E-4" />
-      <entry key="MS500" value="0.19916004196476117" />
-      <entry key="S2" value="0.679691788762795" />
-      <entry key="S5" value="1.042943273428438" />
-      <entry key="S10" value="1.4872128046827735" />
-      <entry key="S30" value="2.303222757971766" />
-      <entry key="S60" value="3.146216298889544" />
-      <entry key="M2" value="5.010643186921924" />
-      <entry key="M5" value="10.46028157541658" />
-      <entry key="M10" value="22.19549375415944" />
-      <entry key="M15" value="33.35467774543309" />
-      <entry key="M30" value="58.02550101742504" />
-      <entry key="H1" value="94.40555581236714" />
-      <entry key="H2" value="143.4757670775163" />
-      <entry key="H4" value="189.67124258538848" />
-      <entry key="D1" value="248.95724364815956" />
-      <entry key="W1" value="261.7742246954508" />
+      <entry key="MS100" value="0.0015974649581206653" />
+      <entry key="MS500" value="0.2758584350104898" />
+      <entry key="S2" value="0.7247222081830913" />
+      <entry key="S5" value="0.8796599787357218" />
+      <entry key="S10" value="0.968002765859572" />
+      <entry key="S30" value="1.7470757919725375" />
+      <entry key="S60" value="2.9059009787601724" />
+      <entry key="M2" value="4.077326646615053" />
+      <entry key="M5" value="5.219640303513545" />
+      <entry key="M10" value="5.862585617313923" />
+      <entry key="M15" value="6.169395749281519" />
+      <entry key="M30" value="7.487663242319196" />
+      <entry key="H1" value="19.21678118774971" />
+      <entry key="H2" value="60.51817381635147" />
+      <entry key="H4" value="126.71920543923537" />
+      <entry key="D1" value="251.23804766213644" />
+      <entry key="W1" value="284.08051879472606" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -316,7 +323,7 @@
       <workItem from="1784363794235" duration="10676000" />
       <workItem from="1784445870370" duration="6025000" />
       <workItem from="1784451956499" duration="335000" />
-      <workItem from="1784452433453" duration="435000" />
+      <workItem from="1784452433453" duration="6481000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -414,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784446493521</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add category and partner query handlers for lookup and scroll retrieval">
+      <option name="closed" value="true" />
+      <created>1784453028741</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1784453028741</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +460,8 @@
     <MESSAGE value="update IDE configuration files" />
     <MESSAGE value="remove initial infrastructure migrations including identity and refresh tokens" />
     <MESSAGE value="remove legacy entity configurations and refactor database initialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove legacy entity configurations and refactor database initialization" />
+    <MESSAGE value="add category and partner query handlers for lookup and scroll retrieval" />
+    <option name="LAST_COMMIT_MESSAGE" value="add category and partner query handlers for lookup and scroll retrieval" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -483,7 +499,7 @@
               <option value="475" />
             </startOffsets>
             <endOffsets>
-              <option value="543" />
+              <option value="558" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
@@ -513,6 +529,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\Users\LOQ\Desktop\Mamoun\PingPong\PingPong.Application\Features\Partners\GetById\GetPartnerByIdQueryHandler.cs" containingFunctionPresentation="Method 'Handle'">
+            <startOffsets>
+              <option value="654" />
+            </startOffsets>
+            <endOffsets>
+              <option value="696" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

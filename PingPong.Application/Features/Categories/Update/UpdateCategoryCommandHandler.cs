@@ -21,7 +21,7 @@ public sealed class UpdateCategoryCommandHandler(
             return Result.Failure("The requested entity was not found.");
         }
 
-        category.Update(request.Name, request.IconUrl);
+        category.Update(request.Name, request.IconUrl, request.Color);
 
         categoryRepository.Update(category);
 

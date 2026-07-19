@@ -5,7 +5,5 @@ namespace PingPong.Application.Features.Support.Update;
 
 public sealed record UpdateSupportCommand(
     Guid Id,
-    string Name,
-    string Email,
     SupportType Type,
     string Message) : ICommand;

@@ -9,19 +9,32 @@ namespace PingPong.Application.Features.Support.Create;
 public sealed class CreateSupportCommandHandler(
     ISupportRepository supportRepository,
     IUnitOfWork unitOfWork,
-    ICurrentUserService currentUserService)
+    ICurrentUserService currentUserService,
+    IIdentityService identityService)
     : ICommandHandler<CreateSupportCommand, Guid>
 {
     public async Task<Result<Guid>> Handle(CreateSupportCommand request, CancellationToken cancellationToken)
     {
-        var fromAuthenticated = !string.IsNullOrEmpty(currentUserService.UserId);
+        var userId = currentUserService.UserId;
+        if (string.IsNullOrEmpty(userId))
+        {
+            return Result.Failure<Guid>("User is not authenticated.");
+        }
+
+        var userResult = await identityService.GetUserByIdAsync(userId);
+        if (userResult.IsFailure)
+        {
+            return Result.Failure<Guid>(userResult.Error!);
+        }
+
+        var user = userResult.Value;
 
         var supportMessage = SupportMessage.Create(
-            request.Name,
-            request.Email,
+            user!.UserName,
+            user.Email,
             request.Type,
             request.Message,
-            fromAuthenticated);
+            true);
 
         supportRepository.Add(supportMessage);
         await unitOfWork.SaveChangesAsync(cancellationToken);

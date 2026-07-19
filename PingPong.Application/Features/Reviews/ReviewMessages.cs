@@ -4,18 +4,12 @@ using PingPong.Domain.StronglyTypes;
 namespace PingPong.Application.Features.Reviews;
 
 public record CreateReviewCommand(
-    string AuthorName,
-    string AuthorAvatar,
     double Rating,
     string Comment,
-    DateTime Date,
-    Guid PartnerId,
-    string UserId) : ICommand<Guid>;
+    Guid PartnerId) : ICommand<Guid>;
 
 public record UpdateReviewCommand(
     Guid Id,
-    string AuthorName,
-    string AuthorAvatar,
     double Rating,
     string Comment) : ICommand;
 

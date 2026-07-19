@@ -5,4 +5,5 @@ using Abstractions.Messaging;
 public sealed record UpdateCategoryCommand(
     Guid Id,
     string Name,
-    string? IconUrl) : ICommand;
+    string? IconUrl,
+    string? Color) : ICommand;

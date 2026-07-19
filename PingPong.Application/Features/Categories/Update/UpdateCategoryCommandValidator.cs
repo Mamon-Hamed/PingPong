@@ -16,5 +16,8 @@ public sealed class UpdateCategoryCommandValidator : AbstractValidator<UpdateCat
 
         RuleFor(x => x.IconUrl)
             .MaximumLength(StringLengths.Length2000);
+
+        RuleFor(x => x.Color)
+            .MaximumLength(StringLengths.Length64);
     }
 }

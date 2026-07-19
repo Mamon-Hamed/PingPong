@@ -12,7 +12,7 @@ public sealed class CreateCategoryCommandHandler(
 {
     public async Task<Result<Guid>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
-        var category = CategoryEntity.Create(request.Name, request.IconUrl);
+        var category = CategoryEntity.Create(request.Name, request.IconUrl, request.Color);
 
         categoryRepository.Add(category);
 

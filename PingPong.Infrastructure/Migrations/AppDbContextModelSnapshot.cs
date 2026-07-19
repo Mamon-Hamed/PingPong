@@ -53,28 +53,28 @@ namespace PingPong.Infrastructure.Migrations
                         new
                         {
                             Id = "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n",
-                            ConcurrencyStamp = "a502ff43-6926-4643-8d62-7801e3919ce6",
+                            ConcurrencyStamp = "ba1a0142-f393-451c-be1b-9bb6fd117841",
                             Name = "Super_Admin",
                             NormalizedName = "SUPER_ADMIN"
                         },
                         new
                         {
                             Id = "b9793138-0c65-4f24-8197-285b0d0246a1",
-                            ConcurrencyStamp = "893309b0-2bab-4801-ad29-ee17f8ebd46f",
+                            ConcurrencyStamp = "c1de6014-bbc1-4fbf-85fb-4dd6deeeb6f5",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h",
-                            ConcurrencyStamp = "74962ebf-d35a-49df-88eb-1e979c737aaf",
+                            ConcurrencyStamp = "b3911f39-4213-46e1-a30a-e0d7bd6e2d66",
                             Name = "Partner",
                             NormalizedName = "PARTNER"
                         },
                         new
                         {
                             Id = "60e86b02-5c62-4414-871d-5511b8b7e283",
-                            ConcurrencyStamp = "5a9a2135-b6b5-4d53-b5e8-5ff4b3638905",
+                            ConcurrencyStamp = "ef6de430-9722-43ff-842e-beb72b3c7cf9",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -200,6 +200,10 @@ namespace PingPong.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Color")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

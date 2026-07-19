@@ -65,6 +65,7 @@ namespace PingPong.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     IconUrl = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: true),
+                    Color = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
@@ -526,10 +527,10 @@ namespace PingPong.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "60e86b02-5c62-4414-871d-5511b8b7e283", "5a9a2135-b6b5-4d53-b5e8-5ff4b3638905", "User", "USER" },
-                    { "b9793138-0c65-4f24-8197-285b0d0246a1", "893309b0-2bab-4801-ad29-ee17f8ebd46f", "Admin", "ADMIN" },
-                    { "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n", "a502ff43-6926-4643-8d62-7801e3919ce6", "Super_Admin", "SUPER_ADMIN" },
-                    { "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h", "74962ebf-d35a-49df-88eb-1e979c737aaf", "Partner", "PARTNER" }
+                    { "60e86b02-5c62-4414-871d-5511b8b7e283", "ef6de430-9722-43ff-842e-beb72b3c7cf9", "User", "USER" },
+                    { "b9793138-0c65-4f24-8197-285b0d0246a1", "c1de6014-bbc1-4fbf-85fb-4dd6deeeb6f5", "Admin", "ADMIN" },
+                    { "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n", "ba1a0142-f393-451c-be1b-9bb6fd117841", "Super_Admin", "SUPER_ADMIN" },
+                    { "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h", "b3911f39-4213-46e1-a30a-e0d7bd6e2d66", "Partner", "PARTNER" }
                 });
 
             migrationBuilder.CreateIndex(

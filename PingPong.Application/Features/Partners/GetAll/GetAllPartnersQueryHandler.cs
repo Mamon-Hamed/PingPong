@@ -33,7 +33,7 @@ public sealed class GetAllPartnersQueryHandler(IPartnerRepository repository, IC
         if (!result.IsSuccess) return result;
 
         var favoriteIds = currentUser.FavoritePartnerIds;
-        var updatedItems = result.Value.Items.Select(p => p with { IsFavorite = favoriteIds.Contains(p.Id) }).ToList();
+        var updatedItems = result.Value!.Items.Select(p => p with { IsFavorite = favoriteIds.Contains(p.Id) }).ToList();
         
         // PaginatedList constructor: (items, count, pageNumber, pageSize)
         // We don't have direct access to pageSize in the result, but we have it in the request.

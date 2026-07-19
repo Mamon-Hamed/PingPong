@@ -5,7 +5,7 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.API.Controllers;
 
-[Authorize(Roles = Roles.Admin)]
+[Authorize(Roles = Roles.User)]
 public class ReviewsController : CrudController<ReviewId, ReviewResponse, CreateReviewCommand, UpdateReviewCommand, DeleteReviewCommand, GetReviewByIdQuery, GetAllReviewsQuery>
 {
 }

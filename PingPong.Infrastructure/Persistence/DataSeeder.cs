@@ -39,13 +39,32 @@ public class DataSeeder(
             var categories = await dbContext.Categories.ToListAsync();
             if (categories.Count < categoriesCount)
             {
-                var categoryNames = new[] { "Electronics", "Fashion", "Food & Drinks", "Health", "Home & Garden", "Sports", "Beauty", "Automotive", "Entertainment", "Services" };
+                var categoryData = new[]
+                {
+                    (Name: "Electronics", Icon: "https://cdn-icons-png.flaticon.com/512/1261/1261143.png", Color: "#4B6584"),
+                    (Name: "Fashion", Icon: "https://cdn-icons-png.flaticon.com/512/3050/3050239.png", Color: "#EB3B5A"),
+                    (Name: "Food & Drinks", Icon: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", Color: "#F7B731"),
+                    (Name: "Health", Icon: "https://cdn-icons-png.flaticon.com/512/2966/2966327.png", Color: "#20BF6B"),
+                    (Name: "Home & Garden", Icon: "https://cdn-icons-png.flaticon.com/512/2611/2611153.png", Color: "#A55EEA"),
+                    (Name: "Sports", Icon: "https://cdn-icons-png.flaticon.com/512/857/857418.png", Color: "#2D98DA"),
+                    (Name: "Beauty", Icon: "https://cdn-icons-png.flaticon.com/512/1940/1940922.png", Color: "#FD9644"),
+                    (Name: "Automotive", Icon: "https://cdn-icons-png.flaticon.com/512/2084/2084110.png", Color: "#778CA3"),
+                    (Name: "Entertainment", Icon: "https://cdn-icons-png.flaticon.com/512/3163/3163478.png", Color: "#FA8231"),
+                    (Name: "Services", Icon: "https://cdn-icons-png.flaticon.com/512/1066/1066371.png", Color: "#45AAF2")
+                };
+                
                 var categoriesToAdd = new List<CategoryEntity>();
                 for (int i = categories.Count; i < categoriesCount; i++)
                 {
-                    var name = i < categoryNames.Length ? categoryNames[i] : faker.Commerce.Categories(1)[0];
-                    var category = CategoryEntity.Create(name, $"https://api.dicebear.com/7.x/identicon/svg?seed={name}");
-                    categoriesToAdd.Add(category);
+                    if (i < categoryData.Length)
+                    {
+                        var data = categoryData[i];
+                        categoriesToAdd.Add(CategoryEntity.Create(data.Name, data.Icon, data.Color));
+                    }
+                    else
+                    {
+                        categoriesToAdd.Add(CategoryEntity.Create(faker.Commerce.Categories(1)[0], "https://cdn-icons-png.flaticon.com/512/1160/1160358.png", faker.Internet.Color()));
+                    }
                 }
                 await dbContext.Categories.AddRangeAsync(categoriesToAdd);
                 await dbContext.SaveChangesAsync();
@@ -54,17 +73,49 @@ public class DataSeeder(
 
             // 3. Seed Partners
             var partners = new List<PartnerEntity>();
-            for (int i = 1; i <= partnersCount; i++)
+            
+            var realisticPartners = new[]
             {
-                var category = faker.PickRandom(categories);
+                (Name: "Cham Palace", Category: "Services", Image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Syrian Modern Electronics", Category: "Electronics", Image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Al-Hameed Fashion", Category: "Fashion", Image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Damascus Delights", Category: "Food & Drinks", Image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Al-Shifa Pharmacy", Category: "Health", Image: "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Green Oasis Garden Center", Category: "Home & Garden", Image: "https://images.unsplash.com/photo-1416870213410-66fc33633d71?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Barada Sports Club", Category: "Sports", Image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Zenobia Beauty Salon", Category: "Beauty", Image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Syrian Auto Care", Category: "Automotive", Image: "https://images.unsplash.com/photo-1486006396193-471068589bca?q=80&w=1000&auto=format&fit=crop"),
+                (Name: "Opera Theater Cafe", Category: "Entertainment", Image: "https://images.unsplash.com/photo-1514525253361-bee8718a300c?q=80&w=1000&auto=format&fit=crop")
+            };
+
+            for (int i = 0; i < partnersCount; i++)
+            {
+                string partnerName;
+                string partnerCategory;
+                string partnerImage;
+
+                if (i < realisticPartners.Length)
+                {
+                    partnerName = realisticPartners[i].Name;
+                    partnerCategory = realisticPartners[i].Category;
+                    partnerImage = realisticPartners[i].Image;
+                }
+                else
+                {
+                    partnerName = faker.Company.CompanyName();
+                    partnerCategory = faker.PickRandom(categories).Name;
+                    partnerImage = faker.Image.PicsumUrl(400, 300);
+                }
+
+                var category = categories.FirstOrDefault(c => c.Name == partnerCategory) ?? faker.PickRandom(categories);
                 var city = faker.PickRandom(syriaCities);
-                var partnerName = faker.Company.CompanyName();
+                
                 var partner = PartnerEntity.Create(
                     partnerName,
                     faker.Phone.PhoneNumber("+963#########"),
-                    faker.Image.PicsumUrl(400, 300),
+                    partnerImage,
                     DateTime.UtcNow.AddMonths(faker.Random.Int(1, 12)),
-                    [faker.Image.PicsumUrl(400, 300), faker.Image.PicsumUrl(400, 300)],
+                    [partnerImage, faker.Image.PicsumUrl(400, 300)],
                     category.Id,
                     country.Id,
                     city.Id,
@@ -113,7 +164,7 @@ public class DataSeeder(
                 var partner = faker.PickRandom(partners);
                 var review = PartnerReview.Create(
                     regularUser.UserName ?? "user",
-                    regularUser.AvatarUrl ?? "https://api.dicebear.com/7.x/avataaars/svg?seed=user",
+                    regularUser.AvatarUrl ?? "https://i.pravatar.cc/150?u=user",
                     faker.Random.Int(1, 5),
                     faker.Rant.Review("partner"),
                     DateTime.UtcNow.AddDays(-faker.Random.Int(1, 30)),
@@ -179,7 +230,7 @@ public class DataSeeder(
                     Email = adminEmail,
                     PhoneNumber = "+963912345678",
                     IsActive = true,
-                    AvatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=admin"
+                    AvatarUrl = "https://i.pravatar.cc/150?u=admin"
                 };
                 
                 adminUser.Locations.Add(new UserLocation
@@ -206,7 +257,7 @@ public class DataSeeder(
                     Email = userEmail,
                     PhoneNumber = "+963987654321",
                     IsActive = true,
-                    AvatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=user"
+                    AvatarUrl = "https://i.pravatar.cc/150?u=user"
                 };
 
                 regularUser.Locations.Add(new UserLocation

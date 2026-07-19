@@ -1,4 +1,5 @@
-﻿using PingPong.Application.Abstractions.Messaging;
+﻿using PingPong.Application.Abstractions.Authentication;
+using PingPong.Application.Abstractions.Messaging;
 using PingPong.Application.Common;
 using PingPong.Domain.Entities.Partners;
 using PingPong.Domain.Repositories;
@@ -8,19 +9,35 @@ namespace PingPong.Application.Features.Reviews;
 
 public sealed class CreateReviewCommandHandler(
     IReviewRepository reviewRepository,
+    ICurrentUserService currentUserService,
+    IIdentityService identityService,
     IUnitOfWork unitOfWork)
     : ICommandHandler<CreateReviewCommand, Guid>
 {
     public async Task<Result<Guid>> Handle(CreateReviewCommand request, CancellationToken cancellationToken)
     {
+        var userId = currentUserService.UserId;
+        if (string.IsNullOrEmpty(userId))
+        {
+            return Result.Failure<Guid>("User is not authenticated.");
+        }
+
+        var userResult = await identityService.GetUserByIdAsync(userId);
+        if (userResult.IsFailure)
+        {
+            return Result.Failure<Guid>(userResult.Error!);
+        }
+
+        var user = userResult.Value;
+
         var review = PartnerReview.Create(
-            request.AuthorName,
-            request.AuthorAvatar,
+            user?.UserName ?? string.Empty,
+            user?.AvatarUrl ?? string.Empty,
             request.Rating,
             request.Comment,
-            request.Date,
+            DateTime.UtcNow,
             new PartnerId(request.PartnerId),
-            request.UserId);
+            userId);
 
         reviewRepository.Add(review);
         await unitOfWork.SaveChangesAsync(cancellationToken);
@@ -31,6 +48,8 @@ public sealed class CreateReviewCommandHandler(
 
 public sealed class UpdateReviewCommandHandler(
     IReviewRepository reviewRepository,
+    ICurrentUserService currentUserService,
+    IIdentityService identityService,
     IUnitOfWork unitOfWork)
     : ICommandHandler<UpdateReviewCommand>
 {
@@ -44,7 +63,21 @@ public sealed class UpdateReviewCommandHandler(
             return Result.Failure("The requested entity was not found.");
         }
 
-        review.Update(request.AuthorName, request.AuthorAvatar, request.Rating, request.Comment);
+        var userId = currentUserService.UserId;
+        if (string.IsNullOrEmpty(userId) || review.UserId != userId)
+        {
+            return Result.Failure("You are not authorized to update this review.");
+        }
+
+        var userResult = await identityService.GetUserByIdAsync(userId);
+        if (userResult.IsFailure)
+        {
+            return Result.Failure(userResult.Error!);
+        }
+
+        var user = userResult.Value;
+
+        review.Update(user?.UserName ?? string.Empty, user?.AvatarUrl ?? string.Empty, request.Rating, request.Comment);
 
         reviewRepository.Update(review);
         await unitOfWork.SaveChangesAsync(cancellationToken);

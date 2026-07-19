@@ -9,15 +9,6 @@ public sealed class UpdateSupportCommandValidator : AbstractValidator<UpdateSupp
     {
         RuleFor(x => x.Id).NotEmpty();
 
-        RuleFor(x => x.Name)
-            .NotEmpty()
-            .MaximumLength(StringLengths.Length200);
-
-        RuleFor(x => x.Email)
-            .NotEmpty()
-            .EmailAddress()
-            .MaximumLength(StringLengths.Length256);
-
         RuleFor(x => x.Type)
             .IsInEnum();
 

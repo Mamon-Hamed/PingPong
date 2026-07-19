@@ -10,6 +10,6 @@ public sealed class GetCategoryByIdQueryHandler(ICategoryRepository categoryRepo
 {
     protected override CategoryResponse MapToResponse(CategoryEntity entity)
     {
-        return new CategoryResponse(entity.Id.Value, entity.Name, entity.IconUrl);
+        return new CategoryResponse(entity.Id.Value, entity.Name, entity.IconUrl, entity.Color);
     }
 }

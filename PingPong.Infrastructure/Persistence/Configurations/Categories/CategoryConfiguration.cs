@@ -18,6 +18,9 @@ internal sealed class CategoryConfiguration : BaseEntityConfiguration<CategoryEn
         builder.Property(c => c.IconUrl)
             .HasMaxLength(StringLengths.Length2000);
 
+        builder.Property(c => c.Color)
+            .HasMaxLength(StringLengths.Length64);
+
         builder.HasIndex(c => c.Name);
     }
 }

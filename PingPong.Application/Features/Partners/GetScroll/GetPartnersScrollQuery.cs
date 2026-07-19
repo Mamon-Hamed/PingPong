@@ -15,6 +15,6 @@ public sealed record GetPartnersScrollQuery : IQuery<PaginatedList<PartnerRespon
     public bool? IsVerified { get; init; }
     public SubscriptionStatus? SubscriptionStatus { get; init; }
     
-    public int Page { get; init; } = 1;
-    public int PageSize { get; init; } = 10;
+    public int Skip { get; init; } = 0;
+    public int Take { get; init; } = 10;
 }
