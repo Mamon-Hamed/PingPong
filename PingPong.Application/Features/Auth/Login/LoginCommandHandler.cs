@@ -27,7 +27,15 @@ public sealed class LoginCommandHandler(
         if (!response.Succeeded)
             throw new BadRequestException("Invalid email or password.");
 
-        var token = await tokenService.GenerateTokenAsync(response.UserId, response.Email, response.UserName, response.Roles, cancellationToken);
+        var token = await tokenService.GenerateTokenAsync(
+            response.UserId, 
+            response.Email, 
+            response.UserName, 
+            response.Roles, 
+            response.Latitude, 
+            response.Longitude, 
+            response.FavoritePartnerIds,
+            cancellationToken);
 
         await identityService.UpdateLastLoginAsync(response.UserId);
 

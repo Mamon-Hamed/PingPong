@@ -17,6 +17,9 @@ public sealed class JwtTokenService(IOptions<JwtSettings> jwtSettings) : ITokenS
         string email,
         string userName,
         IList<string> roles,
+        double? latitude = null,
+        double? longitude = null,
+        IList<Guid>? favoritePartnerIds = null,
         CancellationToken cancellationToken = default)
     {
         var claims = new List<Claim>
@@ -27,6 +30,24 @@ public sealed class JwtTokenService(IOptions<JwtSettings> jwtSettings) : ITokenS
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64)
         };
+
+        if (latitude.HasValue)
+        {
+            claims.Add(new Claim("latitude", latitude.Value.ToString()));
+        }
+
+        if (longitude.HasValue)
+        {
+            claims.Add(new Claim("longitude", longitude.Value.ToString()));
+        }
+
+        if (favoritePartnerIds != null)
+        {
+            foreach (var id in favoritePartnerIds)
+            {
+                claims.Add(new Claim("favorite_partner_id", id.ToString()));
+            }
+        }
 
         foreach (var role in roles)
         {

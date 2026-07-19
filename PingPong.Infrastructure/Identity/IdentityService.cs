@@ -104,6 +104,7 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
         var user = await userManager.Users
             .Include(u => u.Locations)
             .Include(u => u.RegisteredDevices)
+            .Include(u => u.FavoritePartners)
             .FirstOrDefaultAsync(u => u.Email == request.Email);
 
         if (user is null || !user.IsActive)
@@ -154,7 +155,17 @@ public sealed class IdentityService(UserManager<ApplicationUser> userManager) : 
 
         var roles = await userManager.GetRolesAsync(user);
 
-        return new IdentityValidationResponse(true, user.Id, user.Email!, user.UserName!, roles);
+        var latestLocation = user.Locations.OrderByDescending(l => l.CreatedAtUtc).FirstOrDefault();
+
+        return new IdentityValidationResponse(
+            true, 
+            user.Id, 
+            user.Email!, 
+            user.UserName!, 
+            roles, 
+            latestLocation?.Latitude, 
+            latestLocation?.Longitude,
+            user.FavoritePartners.Select(f => f.PartnerId.Value).ToList());
     }
 
     public async Task UpdateLastLoginAsync(string userId)

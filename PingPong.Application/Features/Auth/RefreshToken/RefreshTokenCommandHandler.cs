@@ -16,6 +16,11 @@ public sealed class RefreshTokenCommandHandler(
         var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var email = principal.FindFirst(ClaimTypes.Email)?.Value;
         var userName = principal.FindFirst(ClaimTypes.Name)?.Value;
+        var latitudeStr = principal.FindFirst("latitude")?.Value;
+        var longitudeStr = principal.FindFirst("longitude")?.Value;
+
+        double? latitude = double.TryParse(latitudeStr, out var lat) ? lat : null;
+        double? longitude = double.TryParse(longitudeStr, out var lon) ? lon : null;
 
         if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName))
         {
@@ -34,7 +39,13 @@ public sealed class RefreshTokenCommandHandler(
             .Select(c => c.Value)
             .ToList();
 
-        var token = await tokenService.GenerateTokenAsync(userId, email, userName, roles, cancellationToken);
+        var favoritePartnerIds = principal.Claims
+            .Where(c => c.Type == "favorite_partner_id")
+            .Select(c => Guid.TryParse(c.Value, out var guid) ? guid : Guid.Empty)
+            .Where(g => g != Guid.Empty)
+            .ToList();
+
+        var token = await tokenService.GenerateTokenAsync(userId, email, userName, roles, latitude, longitude, favoritePartnerIds, cancellationToken);
 
         await identityService.UpdateLastLoginAsync(userId);
 

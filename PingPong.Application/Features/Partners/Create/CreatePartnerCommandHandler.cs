@@ -3,10 +3,10 @@ using PingPong.Domain.Models;
 
 namespace PingPong.Application.Features.Partners.Create;
 
-using PingPong.Application.Abstractions.Messaging;
+using Abstractions.Messaging;
 using PingPong.Domain.Entities.Partners;
-using PingPong.Domain.Repositories;
-using PingPong.Application.Common;
+using Domain.Repositories;
+using Common;
 
 public sealed class CreatePartnerCommandHandler(
     IPartnerRepository partnerRepository,

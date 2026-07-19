@@ -42,6 +42,9 @@ public sealed class AdminRegisterCommandHandler(
             request.Email,
             request.UserName,
             roles,
+            request.Latitude,
+            request.Longitude,
+            null,
             cancellationToken);
 
         return Result.Success(new LoginResponse(

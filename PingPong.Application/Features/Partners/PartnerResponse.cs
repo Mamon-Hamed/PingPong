@@ -5,6 +5,17 @@ namespace PingPong.Application.Features.Partners;
 public record PartnerResponse(
     Guid Id,
     string Name,
+    string mediaUrl,
+    int Views,
+    DateTime? ValidUntil,
+    LocationResponse Location,
+    double Rating,
+    string DiscountText,
+    bool isFavorite
+);
+public record PartnerDetailsResponse(
+    Guid Id,
+    string Name,
     string Phone,
     string MediaUrl,
     DateTime? ValidUntil,
@@ -21,7 +32,8 @@ public record PartnerResponse(
     List<ReviewResponse> Reviews,
     double Rating,
     double Distance,
-    string DiscountText);
+    string DiscountText,
+    bool IsFavorite);
 
 public record LocationResponse(
     double Latitude,

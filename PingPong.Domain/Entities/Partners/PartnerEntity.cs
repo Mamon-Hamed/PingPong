@@ -142,6 +142,12 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
         RaiseDomainEvent(new PartnerServiceUpdatedDomainEvent(Id, Name, service.Id, service.Name));
     }
 
+    public void AddOpeningHour(DayOfWeek day, string start, string end, bool isClosed)
+    {
+        var openingHour = PartnerOpeningHour.Create(day, start, end, isClosed, Id);
+        _openingHours.Add(openingHour);
+    }
+
     public void UpdateService(ServiceId serviceId, string name, string media, decimal cost, double discountPercentage)
     {
         var service = _services.FirstOrDefault(s => s.Id == serviceId);

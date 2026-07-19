@@ -4,7 +4,7 @@ using PingPong.Domain.Entities.Categories;
 
 namespace PingPong.Application.Features.Partners.GetAll;
 
-public sealed record GetAllPartnersQuery : GetAllQuery<PartnerResponse>
+public sealed record GetAllPartnersQuery : GetAllQuery<PartnerDetailsResponse>
 {
     public string? Name { get; set; }
     public string? Phone { get; set; }

@@ -1,9 +1,9 @@
 namespace PingPong.Application.Features.SubscriptionPlans.Create;
 
-using PingPong.Application.Abstractions.Messaging;
-using PingPong.Domain.Entities.Subscriptions;
-using PingPong.Domain.Repositories;
-using PingPong.Application.Common;
+using Abstractions.Messaging;
+using Domain.Entities.Subscriptions;
+using Domain.Repositories;
+using Common;
 
 public sealed class CreateSubscriptionPlanCommandHandler(
     ISubscriptionPlanRepository subscriptionPlanRepository,

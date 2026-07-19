@@ -7,7 +7,10 @@ public sealed record IdentityValidationResponse(
     string UserId,
     string Email,
     string UserName,
-    IList<string> Roles);
+    IList<string> Roles,
+    double? Latitude = null,
+    double? Longitude = null,
+    IList<Guid>? FavoritePartnerIds = null);
 
 public sealed record UserIdentityResponse(
     string Id,

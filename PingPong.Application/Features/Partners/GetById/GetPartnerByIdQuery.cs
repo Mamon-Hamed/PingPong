@@ -6,4 +6,4 @@ namespace PingPong.Application.Features.Partners.GetById;
 public sealed record GetPartnerByIdQuery(
     Guid Id,
     double UserLatitude,
-    double UserLongitude) : GetByIdQuery<PartnerId, PartnerResponse>(Id);
+    double UserLongitude) : GetByIdQuery<PartnerId, PartnerDetailsResponse>(Id);

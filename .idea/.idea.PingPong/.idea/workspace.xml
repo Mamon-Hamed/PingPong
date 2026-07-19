@@ -18,79 +18,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IIdentityService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/CategoriesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.API/Controllers/PartnersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.API/Controllers/PartnersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ICurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ICurrentUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/ITokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Abstractions/Authentication/IdentityResponses.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Login/LoginCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/RefreshToken/RefreshTokenCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/AdminRegisterCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Auth/Register/UserRegisterCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Create/CreateCategoryCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Delete/DeleteCategoryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Delete/DeleteCategoryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetAll/GetAllCategoriesQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetAll/GetAllCategoriesQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/GetById/GetCategoryByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Categories/Update/UpdateCategoryCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Cities/CreateCityCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Cities/CreateCityCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Cities/DeleteCityCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Cities/DeleteCityCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Cities/GetAllCitiesQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Cities/GetAllCitiesQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Cities/GetCityByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Cities/GetCityByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/CreateCountryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/CreateCountryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/CreateCountryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/CreateCountryCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/DeleteCountryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/DeleteCountryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/GetAllCountriesQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/GetAllCountriesQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/GetCountryByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/GetCountryByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Countries/UpdateCountryCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Countries/UpdateCountryCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Files/CleanUpOrphanFiles/CleanUpOrphanFilesCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Files/CleanUpOrphanFiles/CleanUpOrphanFilesCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Create/CreatePartnerCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Delete/DeletePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Delete/DeletePartnerCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetAll/GetAllPartnersQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/Update/UpdatePartnerCommandValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Create/CreateSubscriptionPlanCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/GetAll/GetAllSubscriptionPlansQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/GetAll/GetAllSubscriptionPlansQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/SubscriptionPlans/Update/UpdateSubscriptionPlanCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Constants/StringLengths.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/CategoryEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/CityEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/CountryEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/PartnerEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/SubscriptionPlanEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICityRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICountryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ICountryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPartnerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IPartnerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISubscriptionPlanRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISubscriptionPlanRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/PingPong.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/CurrentUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Authentication/JwtTokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Identity/IdentityService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/BaseEntityConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CategoryConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CityConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/CountryConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Extensions/EntityTypeBuilderExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Extensions/EntityTypeBuilderExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/IdentityConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/PartnerConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/SubscriptionPlanConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CategoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CityRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CountryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/CountryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/PartnerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/PartnerRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/SubscriptionPlanRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/SubscriptionPlanRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/PingPong.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +59,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="188" />
+    <option name="cachedIndexableFilesCount" value="190" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -115,6 +68,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c6518e768ca041e8ab72bb5924c784811d7910/3a/088081be/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7359108b69f4d7c8bcac88ec1e70a7811600/70/22bf0c6d/ICacheKeyGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e485c67bf31f401cb6aaf8cd42ac2b7030200/a6/54fdf041/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d382df578ec93391918cfaa4ce7f4b8f35c9aed1241d6556dc9be26df13c/IdentityUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f81314fb91227f6315de888f7e6388218876030c955c2ab607f6468b5ccdb23/IdentityRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PingPong.API/Controllers/AuthController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -208,61 +162,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000000014795" />
-      <entry key="S2" value="1.001102886466663" />
-      <entry key="S5" value="1.0656163884588907" />
-      <entry key="S10" value="1.256156960590359" />
-      <entry key="S30" value="1.63509016479845" />
-      <entry key="S60" value="1.796925444943534" />
-      <entry key="M2" value="1.8927068079499856" />
-      <entry key="M5" value="1.9558590491356926" />
-      <entry key="M10" value="2.0832203369188695" />
-      <entry key="M15" value="2.958407662600621" />
-      <entry key="M30" value="12.787827858311525" />
-      <entry key="H1" value="40.873933980177426" />
-      <entry key="H2" value="77.16563072994543" />
-      <entry key="H4" value="106.97240818464935" />
-      <entry key="D1" value="140.9515725632658" />
-      <entry key="W1" value="147.82164437081062" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.8707810280303675E-119" />
+      <entry key="S2" value="2.314728275919579E-30" />
+      <entry key="S5" value="1.3989525499678283E-12" />
+      <entry key="S10" value="1.1881272915823723E-6" />
+      <entry key="S30" value="0.01421525211980094" />
+      <entry key="S60" value="0.2084726100523114" />
+      <entry key="M2" value="0.9421382823971206" />
+      <entry key="M5" value="3.908756670935454" />
+      <entry key="M10" value="10.939024803856102" />
+      <entry key="M15" value="17.55077631340397" />
+      <entry key="M30" value="32.55002749423303" />
+      <entry key="H1" value="58.855575474818146" />
+      <entry key="H2" value="99.17424987202749" />
+      <entry key="H4" value="139.07312607830417" />
+      <entry key="D1" value="191.54283477394176" />
+      <entry key="W1" value="203.0059064786356" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.8751298840031115E-33" />
-      <entry key="MS500" value="3.105561739670324E-7" />
-      <entry key="S2" value="0.02977203292741991" />
-      <entry key="S5" value="0.48328310300861826" />
-      <entry key="S10" value="1.4626260355862097" />
-      <entry key="S30" value="3.2731691005768626" />
-      <entry key="S60" value="4.038453095103251" />
-      <entry key="M2" value="4.4916378118371325" />
-      <entry key="M5" value="4.79111910280758" />
-      <entry key="M10" value="4.950675025940019" />
-      <entry key="M15" value="5.192768955651479" />
-      <entry key="M30" value="6.558778333082007" />
-      <entry key="H1" value="9.260372172023738" />
-      <entry key="H2" value="12.121327668886492" />
-      <entry key="H4" value="14.23501856684134" />
-      <entry key="D1" value="16.485892382241158" />
-      <entry key="W1" value="16.925131204339724" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000001955444604" />
+      <entry key="S2" value="1.0211560800000947" />
+      <entry key="S5" value="1.2410420723552276" />
+      <entry key="S10" value="1.6283013963570838" />
+      <entry key="S30" value="2.3641692110032393" />
+      <entry key="S60" value="3.005137495464438" />
+      <entry key="M2" value="4.1361123396661" />
+      <entry key="M5" value="6.6052626913001085" />
+      <entry key="M10" value="11.302711927842607" />
+      <entry key="M15" value="15.846025955663903" />
+      <entry key="M30" value="25.50777919644848" />
+      <entry key="H1" value="35.57156708036927" />
+      <entry key="H2" value="44.3145336634883" />
+      <entry key="H4" value="50.60539779438289" />
+      <entry key="D1" value="57.41575910164996" />
+      <entry key="W1" value="58.768514947155474" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.0612173826882017E-7" />
-      <entry key="MS500" value="0.04600719180023101" />
-      <entry key="S2" value="0.48494205395900597" />
-      <entry key="S5" value="1.192489722713222" />
-      <entry key="S10" value="2.41214048793098" />
-      <entry key="S30" value="4.722201083292994" />
-      <entry key="S60" value="5.723994101852906" />
-      <entry key="M2" value="6.323151652220319" />
-      <entry key="M5" value="6.7210351333081455" />
-      <entry key="M10" value="7.020509282283105" />
-      <entry key="M15" value="8.141834035259514" />
-      <entry key="M30" value="19.340788519761215" />
-      <entry key="H1" value="50.13025834683552" />
-      <entry key="H2" value="89.28432443355307" />
-      <entry key="H4" value="121.20588254098422" />
-      <entry key="D1" value="157.43716700489273" />
-      <entry key="W1" value="164.7467318773971" />
+      <entry key="MS100" value="3.133364007721933E-4" />
+      <entry key="MS500" value="0.19916004196476117" />
+      <entry key="S2" value="0.679691788762795" />
+      <entry key="S5" value="1.042943273428438" />
+      <entry key="S10" value="1.4872128046827735" />
+      <entry key="S30" value="2.303222757971766" />
+      <entry key="S60" value="3.146216298889544" />
+      <entry key="M2" value="5.010643186921924" />
+      <entry key="M5" value="10.46028157541658" />
+      <entry key="M10" value="22.19549375415944" />
+      <entry key="M15" value="33.35467774543309" />
+      <entry key="M30" value="58.02550101742504" />
+      <entry key="H1" value="94.40555581236714" />
+      <entry key="H2" value="143.4757670775163" />
+      <entry key="H4" value="189.67124258538848" />
+      <entry key="D1" value="248.95724364815956" />
+      <entry key="W1" value="261.7742246954508" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -276,34 +230,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.PingPong: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.PingPong: https.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.PingPong: http.executor": "Run",
+    ".NET Launch Settings Profile.PingPong: https.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.PingPong: https">
     <configuration name="PingPong: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PingPong.API/PingPong.API.csproj" />
@@ -359,7 +314,9 @@
       <workItem from="1784104805919" duration="1506000" />
       <workItem from="1784106366561" duration="6979000" />
       <workItem from="1784363794235" duration="10676000" />
-      <workItem from="1784445870370" duration="387000" />
+      <workItem from="1784445870370" duration="6025000" />
+      <workItem from="1784451956499" duration="335000" />
+      <workItem from="1784452433453" duration="435000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -449,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784114647184</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="remove legacy entity configurations and refactor database initialization">
+      <option name="closed" value="true" />
+      <created>1784446493521</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1784446493521</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +444,8 @@
     <MESSAGE value="refactor authentication services to use strongly-typed request and response objects" />
     <MESSAGE value="update IDE configuration files" />
     <MESSAGE value="remove initial infrastructure migrations including identity and refresh tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove initial infrastructure migrations including identity and refresh tokens" />
+    <MESSAGE value="remove legacy entity configurations and refactor database initialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove legacy entity configurations and refactor database initialization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -514,10 +480,10 @@
           <line>14</line>
           <properties documentPath="C:\Users\LOQ\Desktop\Mamoun\PingPong\PingPong.Application\Features\Categories\Create\CreateCategoryCommandHandler.cs" containingFunctionPresentation="Method 'Handle'">
             <startOffsets>
-              <option value="526" />
+              <option value="475" />
             </startOffsets>
             <endOffsets>
-              <option value="594" />
+              <option value="543" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />

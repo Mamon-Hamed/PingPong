@@ -89,6 +89,19 @@ public class DataSeeder(
                     );
                 }
                 
+                // Add opening hours
+                var days = Enum.GetValues<DayOfWeek>();
+                foreach (var day in days)
+                {
+                    bool isClosed = day == DayOfWeek.Friday;
+                    partner.AddOpeningHour(
+                        day,
+                        isClosed ? "" : "09:00",
+                        isClosed ? "" : "21:00",
+                        isClosed
+                    );
+                }
+                
                 partners.Add(partner);
             }
             await dbContext.Partners.AddRangeAsync(partners);
@@ -168,6 +181,14 @@ public class DataSeeder(
                     IsActive = true,
                     AvatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=admin"
                 };
+                
+                adminUser.Locations.Add(new UserLocation
+                {
+                    Address = "Damascus, Syria",
+                    Latitude = 33.5138,
+                    Longitude = 36.2765
+                });
+
                 var result = await userManager.CreateAsync(adminUser, "Admin123!");
                 if (result.Succeeded)
                 {
@@ -187,6 +208,14 @@ public class DataSeeder(
                     IsActive = true,
                     AvatarUrl = "https://api.dicebear.com/7.x/avataaars/svg?seed=user"
                 };
+
+                regularUser.Locations.Add(new UserLocation
+                {
+                    Address = "Aleppo, Syria",
+                    Latitude = 36.2021,
+                    Longitude = 37.1343
+                });
+
                 var result = await userManager.CreateAsync(regularUser, "User123!");
                 if (result.Succeeded)
                 {
