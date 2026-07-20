@@ -13,7 +13,8 @@ public abstract class BaseEntityConfiguration<TEntity, TId> : IEntityTypeConfigu
 {
     public void Configure(EntityTypeBuilder<TEntity> builder)
     {
-        builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.Id)
+            .IsClustered(false);
 
         builder.Property(e => e.Id)
             .HasConversion(new StronglyTypedIdValueConverter<TId>())

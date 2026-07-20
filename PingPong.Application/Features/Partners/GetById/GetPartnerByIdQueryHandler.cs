@@ -20,6 +20,10 @@ public sealed class GetPartnerByIdQueryHandler(
     {
         var partnerId = new PartnerId(request.Id);
         var partner = await partnerRepository.GetAsNoTrackingAsync()
+            .Include(p => p.Services)
+                .ThenInclude(s => s.Currency)
+            .Include(p => p.Reviews)
+            .Include(p => p.OpeningHours)
             .Where(p => p.Id == partnerId)
             .ProjectToType<PartnerDetailsResponse>()
             .FirstOrDefaultAsync(cancellationToken);

@@ -8,9 +8,9 @@ using PingPong.Infrastructure.Persistence.Converters;
 
 namespace PingPong.Infrastructure.Persistence.Configurations.Partners;
 
-internal sealed class PartnerOpeningHourConfiguration : BaseEntityConfiguration<PartnerOpeningHour, OpeningHourId>
+internal sealed class PartnerOpeningHourConfiguration : BaseEntityConfiguration<PartnerOpeningHourEntity, OpeningHourId>
 {
-    protected override void ConfigureEntity(EntityTypeBuilder<PartnerOpeningHour> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<PartnerOpeningHourEntity> builder)
     {
         builder.Property(oh => oh.Day)
             .IsTinyEnum()

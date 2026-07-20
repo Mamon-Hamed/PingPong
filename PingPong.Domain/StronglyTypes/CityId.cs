@@ -2,5 +2,5 @@
 
 public sealed record CityId(Guid Value) : StronglyTypedId(Value)
 {
-    public static CityId New() => new(Guid.NewGuid());
+    public static CityId New() => new(Guid.CreateVersion7());
 }

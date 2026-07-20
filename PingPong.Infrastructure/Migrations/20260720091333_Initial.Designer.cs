@@ -12,7 +12,7 @@ using PingPong.Infrastructure.Persistence;
 namespace PingPong.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260719101641_Initial")]
+    [Migration("20260720091333_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -56,28 +56,28 @@ namespace PingPong.Infrastructure.Migrations
                         new
                         {
                             Id = "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n",
-                            ConcurrencyStamp = "ba1a0142-f393-451c-be1b-9bb6fd117841",
+                            ConcurrencyStamp = "41a3e9e7-2b08-470f-bd0f-61ec34a04527",
                             Name = "Super_Admin",
                             NormalizedName = "SUPER_ADMIN"
                         },
                         new
                         {
                             Id = "b9793138-0c65-4f24-8197-285b0d0246a1",
-                            ConcurrencyStamp = "c1de6014-bbc1-4fbf-85fb-4dd6deeeb6f5",
+                            ConcurrencyStamp = "e5e6d684-f9f2-4169-bac9-5569c04b8133",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h",
-                            ConcurrencyStamp = "b3911f39-4213-46e1-a30a-e0d7bd6e2d66",
+                            ConcurrencyStamp = "c5215535-c758-4bd6-8cbc-b3b0756b1d30",
                             Name = "Partner",
                             NormalizedName = "PARTNER"
                         },
                         new
                         {
                             Id = "60e86b02-5c62-4414-871d-5511b8b7e283",
-                            ConcurrencyStamp = "ef6de430-9722-43ff-842e-beb72b3c7cf9",
+                            ConcurrencyStamp = "92b0fd13-3833-476b-8a58-9bb42ef62982",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -241,6 +241,8 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("CreatedBy");
@@ -256,6 +258,81 @@ namespace PingPong.Infrastructure.Migrations
                     b.HasIndex("UpdatedByName");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("PingPong.Domain.Entities.CurrencyEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CreatedByName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<decimal>("Rate")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UpdatedByName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
+                    b.HasIndex("Code")
+                        .IsUnique();
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("CreatedByName");
+
+                    b.HasIndex("IsDefault")
+                        .IsUnique()
+                        .HasFilter("[IsDefault] = 1");
+
+                    b.HasIndex("UpdatedAt");
+
+                    b.HasIndex("UpdatedBy");
+
+                    b.HasIndex("UpdatedByName");
+
+                    b.ToTable("Currencies");
                 });
 
             modelBuilder.Entity("PingPong.Domain.Entities.Locations.CityEntity", b =>
@@ -294,6 +371,8 @@ namespace PingPong.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
 
                     b.HasIndex("CountryId");
 
@@ -352,6 +431,8 @@ namespace PingPong.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
 
                     b.HasIndex("Code")
                         .IsUnique();
@@ -418,6 +499,8 @@ namespace PingPong.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
 
                     b.HasIndex("CreatedAt");
 
@@ -508,6 +591,8 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CityId");
@@ -535,7 +620,7 @@ namespace PingPong.Infrastructure.Migrations
                     b.ToTable("Partners");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerOpeningHour", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerOpeningHourEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -583,6 +668,8 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("CreatedBy");
@@ -600,7 +687,7 @@ namespace PingPong.Infrastructure.Migrations
                     b.ToTable("PartnerOpeningHours");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerReview", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerReviewEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -657,6 +744,8 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("CreatedBy");
@@ -678,7 +767,7 @@ namespace PingPong.Infrastructure.Migrations
                     b.ToTable("PartnerReviews");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerService", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerServiceEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -697,6 +786,9 @@ namespace PingPong.Infrastructure.Migrations
                     b.Property<string>("CreatedByName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<Guid>("CurrencyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("DiscountPercentage")
                         .HasColumnType("float");
@@ -727,11 +819,15 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("CreatedBy");
 
                     b.HasIndex("CreatedByName");
+
+                    b.HasIndex("CurrencyId");
 
                     b.HasIndex("Name");
 
@@ -792,6 +888,8 @@ namespace PingPong.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
+
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("CreatedBy");
@@ -809,7 +907,7 @@ namespace PingPong.Infrastructure.Migrations
                     b.ToTable("SubscriptionPlans");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Support.SupportMessage", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Support.SupportMessageEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -858,6 +956,8 @@ namespace PingPong.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    SqlServerKeyBuilderExtensions.IsClustered(b.HasKey("Id"), false);
 
                     b.HasIndex("CreatedAt");
 
@@ -1237,7 +1337,7 @@ namespace PingPong.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerOpeningHour", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerOpeningHourEntity", b =>
                 {
                     b.HasOne("PingPong.Domain.Entities.Partners.PartnerEntity", "Partner")
                         .WithMany("OpeningHours")
@@ -1248,7 +1348,7 @@ namespace PingPong.Infrastructure.Migrations
                     b.Navigation("Partner");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerReview", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerReviewEntity", b =>
                 {
                     b.HasOne("PingPong.Domain.Entities.Partners.PartnerEntity", "Partner")
                         .WithMany("Reviews")
@@ -1259,13 +1359,21 @@ namespace PingPong.Infrastructure.Migrations
                     b.Navigation("Partner");
                 });
 
-            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerService", b =>
+            modelBuilder.Entity("PingPong.Domain.Entities.Partners.PartnerServiceEntity", b =>
                 {
+                    b.HasOne("PingPong.Domain.Entities.CurrencyEntity", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("PingPong.Domain.Entities.Partners.PartnerEntity", "Partner")
                         .WithMany("Services")
                         .HasForeignKey("PartnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Currency");
 
                     b.Navigation("Partner");
                 });

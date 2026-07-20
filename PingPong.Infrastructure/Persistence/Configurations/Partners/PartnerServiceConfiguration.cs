@@ -7,9 +7,9 @@ using PingPong.Infrastructure.Persistence.Converters;
 
 namespace PingPong.Infrastructure.Persistence.Configurations.Partners;
 
-internal sealed class PartnerServiceConfiguration : BaseEntityConfiguration<PartnerService, ServiceId>
+internal sealed class PartnerServiceConfiguration : BaseEntityConfiguration<PartnerServiceEntity, ServiceId>
 {
-    protected override void ConfigureEntity(EntityTypeBuilder<PartnerService> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<PartnerServiceEntity> builder)
     {
         builder.Property(s => s.Name)
             .HasMaxLength(StringLengths.Length200)
@@ -29,7 +29,12 @@ internal sealed class PartnerServiceConfiguration : BaseEntityConfiguration<Part
             .HasConversion(new StronglyTypedIdValueConverter<PartnerId>())
             .IsRequired();
 
+        builder.Property(s => s.CurrencyId)
+            .HasConversion(new StronglyTypedIdValueConverter<CurrencyId>())
+            .IsRequired();
+
         builder.HasIndex(s => s.PartnerId);
+        builder.HasIndex(s => s.CurrencyId);
         builder.HasIndex(s => s.Name);
     }
 }

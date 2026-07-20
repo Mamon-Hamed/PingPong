@@ -8,6 +8,6 @@ namespace PingPong.Application.Features.Support.Delete;
 public sealed class DeleteSupportCommandHandler(
     ISupportRepository supportRepository,
     IUnitOfWork unitOfWork)
-    : DeleteCommandHandler<DeleteSupportCommand, SupportMessage, SupportId>(supportRepository, unitOfWork)
+    : DeleteCommandHandler<DeleteSupportCommand, SupportMessageEntity, SupportId>(supportRepository, unitOfWork)
 {
 }

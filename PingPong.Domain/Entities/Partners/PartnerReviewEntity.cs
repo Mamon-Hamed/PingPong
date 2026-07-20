@@ -3,9 +3,9 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Entities.Partners;
 
-public sealed class PartnerReview : Entity<ReviewId>
+public sealed class PartnerReviewEntity : Entity<ReviewId>
 {
-    private PartnerReview(
+    private PartnerReviewEntity(
         ReviewId id,
         string authorName,
         string authorAvatar,
@@ -25,7 +25,7 @@ public sealed class PartnerReview : Entity<ReviewId>
         UserId = userId;
     }
 
-    private PartnerReview() { }
+    private PartnerReviewEntity() { }
 
     public string AuthorName { get; private set; } = string.Empty;
     public string AuthorAvatar { get; private set; } = string.Empty;
@@ -38,7 +38,7 @@ public sealed class PartnerReview : Entity<ReviewId>
     
     public string UserId { get; private set; } = string.Empty;
 
-    public static PartnerReview Create(
+    public static PartnerReviewEntity Create(
         string authorName,
         string authorAvatar,
         double rating,
@@ -47,7 +47,7 @@ public sealed class PartnerReview : Entity<ReviewId>
         PartnerId partnerId,
         string userId)
     {
-        return new PartnerReview(ReviewId.New(), authorName, authorAvatar, rating, comment, date, partnerId, userId);
+        return new PartnerReviewEntity(ReviewId.New(), authorName, authorAvatar, rating, comment, date, partnerId, userId);
     }
 
     public void Update(string authorName, string authorAvatar, double rating, string comment)

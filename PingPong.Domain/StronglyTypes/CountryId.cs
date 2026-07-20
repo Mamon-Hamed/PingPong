@@ -2,5 +2,5 @@
 
 public sealed record CountryId(Guid Value) : StronglyTypedId(Value)
 {
-    public static CountryId New() => new(Guid.NewGuid());
+    public static CountryId New() => new(Guid.CreateVersion7());
 }

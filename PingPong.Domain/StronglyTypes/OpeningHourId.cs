@@ -2,5 +2,5 @@
 
 public sealed record OpeningHourId(Guid Value) : StronglyTypedId(Value)
 {
-    public static OpeningHourId New() => new(Guid.NewGuid());
+    public static OpeningHourId New() => new(Guid.CreateVersion7());
 }

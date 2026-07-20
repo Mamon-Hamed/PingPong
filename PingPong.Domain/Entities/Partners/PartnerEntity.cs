@@ -18,9 +18,9 @@ public enum SubscriptionStatus
 
 public sealed class PartnerEntity : AggregateRoot<PartnerId>
 {
-    private readonly List<PartnerOpeningHour> _openingHours = [];
-    private readonly List<PartnerService> _services = [];
-    private readonly List<PartnerReview> _reviews = [];
+    private readonly List<PartnerOpeningHourEntity> _openingHours = [];
+    private readonly List<PartnerServiceEntity> _services = [];
+    private readonly List<PartnerReviewEntity> _reviews = [];
 
     private PartnerEntity(
         PartnerId id,
@@ -73,9 +73,9 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
     public bool IsVerified { get; private set; }
     public SubscriptionStatus SubscriptionStatus { get; private set; }
 
-    public IReadOnlyCollection<PartnerOpeningHour> OpeningHours => _openingHours.AsReadOnly();
-    public IReadOnlyCollection<PartnerService> Services => _services.AsReadOnly();
-    public IReadOnlyCollection<PartnerReview> Reviews => _reviews.AsReadOnly();
+    public IReadOnlyCollection<PartnerOpeningHourEntity> OpeningHours => _openingHours.AsReadOnly();
+    public IReadOnlyCollection<PartnerServiceEntity> Services => _services.AsReadOnly();
+    public IReadOnlyCollection<PartnerReviewEntity> Reviews => _reviews.AsReadOnly();
 
     public static PartnerEntity Create(
         string name,
@@ -135,25 +135,25 @@ public sealed class PartnerEntity : AggregateRoot<PartnerId>
     
     public void SetVerified(bool isVerified) => IsVerified = isVerified;
 
-    public void AddService(string name, string media, decimal cost, double discountPercentage)
+    public void AddService(string name, string media, decimal cost, double discountPercentage, CurrencyId currencyId)
     {
-        var service = PartnerService.Create(name, media, cost, discountPercentage, Id);
+        var service = PartnerServiceEntity.Create(name, media, cost, discountPercentage, Id, currencyId);
         _services.Add(service);
         RaiseDomainEvent(new PartnerServiceUpdatedDomainEvent(Id, Name, service.Id, service.Name));
     }
 
     public void AddOpeningHour(DayOfWeek day, string start, string end, bool isClosed)
     {
-        var openingHour = PartnerOpeningHour.Create(day, start, end, isClosed, Id);
+        var openingHour = PartnerOpeningHourEntity.Create(day, start, end, isClosed, Id);
         _openingHours.Add(openingHour);
     }
 
-    public void UpdateService(ServiceId serviceId, string name, string media, decimal cost, double discountPercentage)
+    public void UpdateService(ServiceId serviceId, string name, string media, decimal cost, double discountPercentage, CurrencyId currencyId)
     {
         var service = _services.FirstOrDefault(s => s.Id == serviceId);
         if (service != null)
         {
-            service.Update(name, media, cost, discountPercentage);
+            service.Update(name, media, cost, discountPercentage, currencyId);
             RaiseDomainEvent(new PartnerServiceUpdatedDomainEvent(Id, Name, service.Id, service.Name));
         }
     }

@@ -29,7 +29,7 @@ public sealed class CreateSupportCommandHandler(
 
         var user = userResult.Value;
 
-        var supportMessage = SupportMessage.Create(
+        var supportMessage = SupportMessageEntity.Create(
             user!.UserName,
             user.Email,
             request.Type,

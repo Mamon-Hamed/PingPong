@@ -3,9 +3,9 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Entities.Partners;
 
-public sealed class PartnerOpeningHour : Entity<OpeningHourId>
+public sealed class PartnerOpeningHourEntity : Entity<OpeningHourId>
 {
-    private PartnerOpeningHour(OpeningHourId id, DayOfWeek day, string start, string end, bool isClosed, PartnerId partnerId)
+    private PartnerOpeningHourEntity(OpeningHourId id, DayOfWeek day, string start, string end, bool isClosed, PartnerId partnerId)
         : base(id)
     {
         Day = day;
@@ -15,7 +15,7 @@ public sealed class PartnerOpeningHour : Entity<OpeningHourId>
         PartnerId = partnerId;
     }
 
-    private PartnerOpeningHour() { }
+    private PartnerOpeningHourEntity() { }
 
     public DayOfWeek Day { get; private set; }
     public string Start { get; private set; } = string.Empty; // HH:mm format
@@ -25,8 +25,8 @@ public sealed class PartnerOpeningHour : Entity<OpeningHourId>
     public PartnerId PartnerId { get; private set; } = default!;
     public PartnerEntity? Partner { get; private set; }
 
-    public static PartnerOpeningHour Create(DayOfWeek day, string start, string end, bool isClosed, PartnerId partnerId)
+    public static PartnerOpeningHourEntity Create(DayOfWeek day, string start, string end, bool isClosed, PartnerId partnerId)
     {
-        return new PartnerOpeningHour(OpeningHourId.New(), day, start, end, isClosed, partnerId);
+        return new PartnerOpeningHourEntity(OpeningHourId.New(), day, start, end, isClosed, partnerId);
     }
 }

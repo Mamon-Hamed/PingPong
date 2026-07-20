@@ -75,7 +75,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,7 +95,31 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Countries", x => x.Id);
+                    table.PrimaryKey("PK_Countries", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Currencies",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Symbol = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Rate = table.Column<decimal>(type: "decimal(18,4)", precision: 18, scale: 4, nullable: false),
+                    IsDefault = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    CreatedByName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    UpdatedByName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Currencies", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                 });
 
             migrationBuilder.CreateTable(
@@ -115,7 +140,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.PrimaryKey("PK_Notifications", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                 });
 
             migrationBuilder.CreateTable(
@@ -137,7 +163,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SubscriptionPlans", x => x.Id);
+                    table.PrimaryKey("PK_SubscriptionPlans", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                 });
 
             migrationBuilder.CreateTable(
@@ -159,7 +186,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SupportMessages", x => x.Id);
+                    table.PrimaryKey("PK_SupportMessages", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                 });
 
             migrationBuilder.CreateTable(
@@ -352,7 +380,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cities", x => x.Id);
+                    table.PrimaryKey("PK_Cities", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                     table.ForeignKey(
                         name: "FK_Cities_Countries_CountryId",
                         column: x => x.CountryId,
@@ -391,7 +420,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Partners", x => x.Id);
+                    table.PrimaryKey("PK_Partners", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                     table.ForeignKey(
                         name: "FK_Partners_Categories_CategoryId",
                         column: x => x.CategoryId,
@@ -431,7 +461,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PartnerOpeningHours", x => x.Id);
+                    table.PrimaryKey("PK_PartnerOpeningHours", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                     table.ForeignKey(
                         name: "FK_PartnerOpeningHours_Partners_PartnerId",
                         column: x => x.PartnerId,
@@ -461,7 +492,8 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PartnerReviews", x => x.Id);
+                    table.PrimaryKey("PK_PartnerReviews", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
                     table.ForeignKey(
                         name: "FK_PartnerReviews_Partners_PartnerId",
                         column: x => x.PartnerId,
@@ -479,6 +511,7 @@ namespace PingPong.Infrastructure.Migrations
                     Media = table.Column<string>(type: "nvarchar(2000)", maxLength: 2000, nullable: false),
                     Cost = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     DiscountPercentage = table.Column<double>(type: "float", nullable: false),
+                    CurrencyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PartnerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -489,7 +522,14 @@ namespace PingPong.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PartnerServices", x => x.Id);
+                    table.PrimaryKey("PK_PartnerServices", x => x.Id)
+                        .Annotation("SqlServer:Clustered", false);
+                    table.ForeignKey(
+                        name: "FK_PartnerServices_Currencies_CurrencyId",
+                        column: x => x.CurrencyId,
+                        principalTable: "Currencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PartnerServices_Partners_PartnerId",
                         column: x => x.PartnerId,
@@ -527,10 +567,10 @@ namespace PingPong.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "60e86b02-5c62-4414-871d-5511b8b7e283", "ef6de430-9722-43ff-842e-beb72b3c7cf9", "User", "USER" },
-                    { "b9793138-0c65-4f24-8197-285b0d0246a1", "c1de6014-bbc1-4fbf-85fb-4dd6deeeb6f5", "Admin", "ADMIN" },
-                    { "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n", "ba1a0142-f393-451c-be1b-9bb6fd117841", "Super_Admin", "SUPER_ADMIN" },
-                    { "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h", "b3911f39-4213-46e1-a30a-e0d7bd6e2d66", "Partner", "PARTNER" }
+                    { "60e86b02-5c62-4414-871d-5511b8b7e283", "92b0fd13-3833-476b-8a58-9bb42ef62982", "User", "USER" },
+                    { "b9793138-0c65-4f24-8197-285b0d0246a1", "e5e6d684-f9f2-4169-bac9-5569c04b8133", "Admin", "ADMIN" },
+                    { "e1f2d3c4-5b6a-7e8f-9g0h-1i2j3k4l5m6n", "41a3e9e7-2b08-470f-bd0f-61ec34a04527", "Super_Admin", "SUPER_ADMIN" },
+                    { "f3c1e2d4-8b6a-4f5e-9c3b-1a2d3e4f5g6h", "c5215535-c758-4bd6-8cbc-b3b0756b1d30", "Partner", "PARTNER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -712,6 +752,49 @@ namespace PingPong.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Countries_UpdatedByName",
                 table: "Countries",
+                column: "UpdatedByName");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_Code",
+                table: "Currencies",
+                column: "Code",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_CreatedAt",
+                table: "Currencies",
+                column: "CreatedAt");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_CreatedBy",
+                table: "Currencies",
+                column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_CreatedByName",
+                table: "Currencies",
+                column: "CreatedByName");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_IsDefault",
+                table: "Currencies",
+                column: "IsDefault",
+                unique: true,
+                filter: "[IsDefault] = 1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_UpdatedAt",
+                table: "Currencies",
+                column: "UpdatedAt");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_UpdatedBy",
+                table: "Currencies",
+                column: "UpdatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Currencies_UpdatedByName",
+                table: "Currencies",
                 column: "UpdatedByName");
 
             migrationBuilder.CreateIndex(
@@ -910,6 +993,11 @@ namespace PingPong.Infrastructure.Migrations
                 column: "CreatedByName");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PartnerServices_CurrencyId",
+                table: "PartnerServices",
+                column: "CurrencyId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PartnerServices_Name",
                 table: "PartnerServices",
                 column: "Name");
@@ -1096,6 +1184,9 @@ namespace PingPong.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Currencies");
 
             migrationBuilder.DropTable(
                 name: "Partners");

@@ -7,9 +7,9 @@ using PingPong.Infrastructure.Persistence.Converters;
 
 namespace PingPong.Infrastructure.Persistence.Configurations.Partners;
 
-internal sealed class PartnerReviewConfiguration : BaseEntityConfiguration<PartnerReview, ReviewId>
+internal sealed class PartnerReviewConfiguration : BaseEntityConfiguration<PartnerReviewEntity, ReviewId>
 {
-    protected override void ConfigureEntity(EntityTypeBuilder<PartnerReview> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<PartnerReviewEntity> builder)
     {
         builder.Property(r => r.AuthorName)
             .HasMaxLength(StringLengths.Length200)

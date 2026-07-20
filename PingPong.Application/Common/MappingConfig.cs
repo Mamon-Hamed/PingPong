@@ -27,5 +27,9 @@ public static class MappingConfig
             .Map(dest => dest.ReviewsCount, src => src.Reviews.Count)
             .Map(dest => dest.DiscountText, src => src.Services.Any(s => s.DiscountPercentage > 0) ? "up to " + src.Services.Max(s => s.DiscountPercentage) + "%" : "");
 
+        TypeAdapterConfig<PartnerServiceEntity, ServiceResponse>.NewConfig()
+            .Map(dest => dest.CurrencyCode, src => src.Currency != null ? src.Currency.Code : "")
+            .Map(dest => dest.CurrencySymbol, src => src.Currency != null ? src.Currency.Symbol : "")
+            .Map(dest => dest.CurrencyRate, src => src.Currency != null ? src.Currency.Rate : 0);
     }
 }

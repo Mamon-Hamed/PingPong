@@ -9,6 +9,8 @@ using PingPong.Domain.Entities.Locations;
 using PingPong.Domain.Entities.Partners;
 using PingPong.Domain.Models;
 using PingPong.Infrastructure.Identity;
+using PingPong.Domain.Entities;
+using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Infrastructure.Persistence;
 
@@ -33,6 +35,17 @@ public class DataSeeder(
             if (regularUser == null)
             {
                 return Result.Failure("Regular user not found after seeding users.");
+            }
+
+            // 0. Seed Currencies
+            var currencies = await dbContext.Currencies.ToListAsync();
+            if (currencies.Count == 0)
+            {
+                currencies.Add(CurrencyEntity.Create("US Dollar", "USD", "$", 1.0m, true));
+                currencies.Add(CurrencyEntity.Create("Euro", "EUR", "€", 0.92m));
+                currencies.Add(CurrencyEntity.Create("Syrian Pound", "SYP", "LS", 13000m));
+                await dbContext.Currencies.AddRangeAsync(currencies);
+                await dbContext.SaveChangesAsync();
             }
 
             // 1. Seed Categories
@@ -130,13 +143,15 @@ public class DataSeeder(
                 
                 // Add some realistic services
                 int servicesCount = faker.Random.Int(1, 4);
+                var currency = faker.PickRandom(currencies);
                 for (int j = 0; j < servicesCount; j++)
                 {
                     partner.AddService(
                         faker.Commerce.ProductName(),
                         faker.Image.PicsumUrl(100, 100),
                         faker.Random.Decimal(10, 500),
-                        faker.Random.Int(5, 30)
+                        faker.Random.Int(5, 30),
+                        currency.Id
                     );
                 }
                 
@@ -158,11 +173,11 @@ public class DataSeeder(
             await dbContext.Partners.AddRangeAsync(partners);
 
             // 4. Seed Reviews using the regular user
-            var reviews = new List<PartnerReview>();
+            var reviews = new List<PartnerReviewEntity>();
             for (int i = 0; i < reviewsCount; i++)
             {
                 var partner = faker.PickRandom(partners);
-                var review = PartnerReview.Create(
+                var review = PartnerReviewEntity.Create(
                     regularUser.UserName ?? "user",
                     regularUser.AvatarUrl ?? "https://i.pravatar.cc/150?u=user",
                     faker.Random.Int(1, 5),

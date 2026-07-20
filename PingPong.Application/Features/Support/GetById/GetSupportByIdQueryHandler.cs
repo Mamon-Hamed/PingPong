@@ -6,9 +6,9 @@ using PingPong.Domain.StronglyTypes;
 namespace PingPong.Application.Features.Support.GetById;
 
 public sealed class GetSupportByIdQueryHandler(ISupportRepository supportRepository)
-    : GetByIdQueryHandler<GetSupportByIdQuery, SupportMessage, SupportId, SupportResponse>(supportRepository)
+    : GetByIdQueryHandler<GetSupportByIdQuery, SupportMessageEntity, SupportId, SupportResponse>(supportRepository)
 {
-    protected override SupportResponse MapToResponse(SupportMessage entity)
+    protected override SupportResponse MapToResponse(SupportMessageEntity entity)
     {
         return new SupportResponse(
             entity.Id.Value,

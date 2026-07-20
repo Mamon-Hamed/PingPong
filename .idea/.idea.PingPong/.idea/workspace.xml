@@ -20,13 +20,43 @@
     <list default="true" id="09f21de2-50a2-4550-a1d1-74b43760a5c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PingPong/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Common/MappingConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/GetScroll/GetPartnersScrollQueryHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Partners/PartnerResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Events/NotificationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Events/NotificationEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Reviews/ReviewHandlers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Create/CreateSupportCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/Delete/DeleteSupportCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/Delete/DeleteSupportCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/GetAll/GetAllSupportMessagesQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/GetAll/GetAllSupportMessagesQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Application/Features/Support/GetById/GetSupportByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Application/Features/Support/GetById/GetSupportByIdQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerOpeningHour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerReview.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Partners/PartnerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Entities/Support/SupportMessage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/IReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/IReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISupportRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/Repositories/ISupportRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CategoryId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CategoryId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CityId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CityId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CountryId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/CountryId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/NotificationId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/NotificationId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/OpeningHourId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/OpeningHourId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/PartnerId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/PartnerId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/ReviewId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/ReviewId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/ServiceId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/ServiceId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/SubscriptionPlanId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/SubscriptionPlanId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/SupportId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Domain/StronglyTypes/SupportId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260719101641_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/20260719101641_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Common/BaseEntityConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Common/BaseEntityConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerOpeningHourConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerOpeningHourConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerReviewConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerReviewConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerServiceConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Partners/PartnerServiceConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Support/SupportMessageConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Configurations/Support/SupportMessageConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/DataSeeder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/ReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/ReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/SupportRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PingPong.Infrastructure/Persistence/Repositories/SupportRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,61 +175,61 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000001350970962" />
-      <entry key="S5" value="1.001787550941343" />
-      <entry key="S10" value="1.042304301837076" />
-      <entry key="S30" value="1.4551701538343087" />
-      <entry key="S60" value="2.464549832840996" />
-      <entry key="M2" value="4.400941752054482" />
-      <entry key="M5" value="7.61885241587889" />
-      <entry key="M10" value="10.111830772091743" />
-      <entry key="M15" value="11.46258382664445" />
-      <entry key="M30" value="13.632271565566557" />
-      <entry key="H1" value="20.35410232437554" />
-      <entry key="H2" value="46.90511824801484" />
-      <entry key="H4" value="95.99873765959086" />
-      <entry key="D1" value="198.44395084015744" />
-      <entry key="W1" value="226.83554055870016" />
+      <entry key="MS100" value="7.961171239089543E-278" />
+      <entry key="MS500" value="1.1441015465657474E-55" />
+      <entry key="S2" value="1.3667856847902165E-13" />
+      <entry key="S5" value="5.9948629680247935E-5" />
+      <entry key="S10" value="0.05979477633940132" />
+      <entry key="S30" value="10.008526627929928" />
+      <entry key="S60" value="45.02217870278491" />
+      <entry key="M2" value="101.01797094203481" />
+      <entry key="M5" value="167.31028239759053" />
+      <entry key="M10" value="199.3432685127679" />
+      <entry key="M15" value="212.41788713676553" />
+      <entry key="M30" value="228.65220375725607" />
+      <entry key="H1" value="242.67369779099974" />
+      <entry key="H2" value="270.6738721003839" />
+      <entry key="H4" value="320.77861086010836" />
+      <entry key="D1" value="430.73586720104606" />
+      <entry key="W1" value="462.2316422624371" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.428119915627863E-54" />
-      <entry key="MS500" value="1.701974053942752E-11" />
-      <entry key="S2" value="0.0020311323992057723" />
-      <entry key="S5" value="0.0837713074154005" />
-      <entry key="S10" value="0.2894327338353444" />
-      <entry key="S30" value="0.6614965482515258" />
-      <entry key="S60" value="0.8201071681107084" />
-      <entry key="M2" value="1.0770576431871761" />
-      <entry key="M5" value="2.7017693217717413" />
-      <entry key="M10" value="5.433618121085876" />
-      <entry key="M15" value="7.3249964992779075" />
-      <entry key="M30" value="10.50257487502248" />
-      <entry key="H1" value="16.002958914687703" />
-      <entry key="H2" value="28.712905278667627" />
-      <entry key="H4" value="45.76062968100166" />
-      <entry key="D1" value="73.85116773850211" />
-      <entry key="W1" value="80.76922318244347" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000000000078988" />
+      <entry key="S2" value="1.0027007295224815" />
+      <entry key="S5" value="1.1417643374793367" />
+      <entry key="S10" value="1.5321361570661711" />
+      <entry key="S30" value="2.289684826556586" />
+      <entry key="S60" value="2.663081942115931" />
+      <entry key="M2" value="3.034414126160833" />
+      <entry key="M5" value="3.499863429416622" />
+      <entry key="M10" value="4.153544220506447" />
+      <entry key="M15" value="5.177129700841879" />
+      <entry key="M30" value="8.450836996768697" />
+      <entry key="H1" value="14.486038983427646" />
+      <entry key="H2" value="27.27459637735031" />
+      <entry key="H4" value="45.210044179574034" />
+      <entry key="D1" value="76.57484232952575" />
+      <entry key="W1" value="84.56835332860682" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="7.661954081022952E-4" />
-      <entry key="MS500" value="0.23815949951432266" />
-      <entry key="S2" value="0.699933059360403" />
-      <entry key="S5" value="0.9382874975267443" />
-      <entry key="S10" value="1.2253656364003995" />
-      <entry key="S30" value="2.0295238031701603" />
-      <entry key="S60" value="3.219687401680073" />
-      <entry key="M2" value="5.427728810768884" />
-      <entry key="M5" value="10.275227687147993" />
-      <entry key="M10" value="15.507258821044616" />
-      <entry key="M15" value="18.75576363241509" />
-      <entry key="M30" value="24.114064256322905" />
-      <entry key="H1" value="36.34322714780682" />
-      <entry key="H2" value="75.60751541057725" />
-      <entry key="H4" value="141.75178288085698" />
-      <entry key="D1" value="272.2932270933561" />
-      <entry key="W1" value="307.60447167317557" />
+      <entry key="MS100" value="0.007238969233518523" />
+      <entry key="MS500" value="0.3731945958272557" />
+      <entry key="S2" value="0.7836310425442156" />
+      <entry key="S5" value="1.0321317320466925" />
+      <entry key="S10" value="1.5128377806601896" />
+      <entry key="S30" value="12.251629220638286" />
+      <entry key="S60" value="47.633967421399355" />
+      <entry key="M2" value="103.9903975529772" />
+      <entry key="M5" value="170.76163807727403" />
+      <entry key="M10" value="203.46316336622195" />
+      <entry key="M15" value="217.56697817087405" />
+      <entry key="M30" value="237.0820737572184" />
+      <entry key="H1" value="257.14440204747325" />
+      <entry key="H2" value="297.93676502130256" />
+      <entry key="H4" value="365.98021845123355" />
+      <entry key="D1" value="507.30858104789075" />
+      <entry key="W1" value="546.7996656738023" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -405,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784453028741</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add PartnerViewedDomainEvent and handler to track partner view counts">
+      <option name="closed" value="true" />
+      <created>1784537331119</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1784537331119</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +475,8 @@
     <MESSAGE value="remove initial infrastructure migrations including identity and refresh tokens" />
     <MESSAGE value="remove legacy entity configurations and refactor database initialization" />
     <MESSAGE value="add category and partner query handlers for lookup and scroll retrieval" />
-    <option name="LAST_COMMIT_MESSAGE" value="add category and partner query handlers for lookup and scroll retrieval" />
+    <MESSAGE value="add PartnerViewedDomainEvent and handler to track partner view counts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add PartnerViewedDomainEvent and handler to track partner view counts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -501,26 +540,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs</url>
-          <line>26</line>
+          <line>30</line>
           <properties documentPath="C:\Users\LOQ\Desktop\Mamoun\PingPong\PingPong.Application\Features\Partners\GetById\GetPartnerByIdQueryHandler.cs" containingFunctionPresentation="Method 'Handle'">
             <startOffsets>
-              <option value="1009" />
+              <option value="1172" />
             </startOffsets>
             <endOffsets>
-              <option value="1029" />
+              <option value="1192" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PingPong.Application/Features/Partners/GetById/GetPartnerByIdQueryHandler.cs</url>
-          <line>39</line>
+          <line>43</line>
           <properties documentPath="C:\Users\LOQ\Desktop\Mamoun\PingPong\PingPong.Application\Features\Partners\GetById\GetPartnerByIdQueryHandler.cs" containingFunctionPresentation="Method 'Handle'">
             <startOffsets>
-              <option value="1478" />
+              <option value="1641" />
             </startOffsets>
             <endOffsets>
-              <option value="1541" />
+              <option value="1704" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />

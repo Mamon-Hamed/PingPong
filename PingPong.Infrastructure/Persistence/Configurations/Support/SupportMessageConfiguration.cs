@@ -6,9 +6,9 @@ using PingPong.Domain.Constants;
 
 namespace PingPong.Infrastructure.Persistence.Configurations.Support;
 
-public sealed class SupportMessageConfiguration : BaseEntityConfiguration<SupportMessage, Domain.StronglyTypes.SupportId>
+public sealed class SupportMessageConfiguration : BaseEntityConfiguration<SupportMessageEntity, Domain.StronglyTypes.SupportId>
 {
-    protected override void ConfigureEntity(EntityTypeBuilder<SupportMessage> builder)
+    protected override void ConfigureEntity(EntityTypeBuilder<SupportMessageEntity> builder)
     {
         builder.Property(s => s.Name)
             .HasMaxLength(StringLengths.Length200)

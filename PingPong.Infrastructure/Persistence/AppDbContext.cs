@@ -8,17 +8,20 @@ using PingPong.Domain.Entities.Support;
 using PingPong.Domain.Entities.Notifications;
 using PingPong.Infrastructure.Identity;
 
+using PingPong.Domain.Entities;
+
 namespace PingPong.Infrastructure.Persistence;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
+    public DbSet<CurrencyEntity> Currencies => Set<CurrencyEntity>();
     public DbSet<CategoryEntity> Categories => Set<CategoryEntity>();
-    public DbSet<SupportMessage> SupportMessages => Set<SupportMessage>();
+    public DbSet<SupportMessageEntity> SupportMessages => Set<SupportMessageEntity>();
     public DbSet<SubscriptionPlanEntity> SubscriptionPlans => Set<SubscriptionPlanEntity>();
     public DbSet<PartnerEntity> Partners => Set<PartnerEntity>();
-    public DbSet<PartnerOpeningHour> PartnerOpeningHours => Set<PartnerOpeningHour>();
-    public DbSet<PartnerService> PartnerServices => Set<PartnerService>();
-    public DbSet<PartnerReview> PartnerReviews => Set<PartnerReview>();
+    public DbSet<PartnerOpeningHourEntity> PartnerOpeningHours => Set<PartnerOpeningHourEntity>();
+    public DbSet<PartnerServiceEntity> PartnerServices => Set<PartnerServiceEntity>();
+    public DbSet<PartnerReviewEntity> PartnerReviews => Set<PartnerReviewEntity>();
     public DbSet<CountryEntity> Countries => Set<CountryEntity>();
     public DbSet<CityEntity> Cities => Set<CityEntity>();
     public DbSet<NotificationEntity> Notifications => Set<NotificationEntity>();

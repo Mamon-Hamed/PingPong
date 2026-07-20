@@ -3,6 +3,6 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Repositories;
 
-public interface ISupportRepository : IRepository<SupportMessage, SupportId>
+public interface ISupportRepository : IRepository<SupportMessageEntity, SupportId>
 {
 }

@@ -2,5 +2,5 @@
 
 public sealed record SupportId(Guid Value) : StronglyTypedId(Value)
 {
-    public static SupportId New() => new(Guid.NewGuid());
+    public static SupportId New() => new(Guid.CreateVersion7());
 }

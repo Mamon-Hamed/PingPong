@@ -3,6 +3,6 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Repositories;
 
-public interface IReviewRepository : IRepository<PartnerReview, ReviewId>
+public interface IReviewRepository : IRepository<PartnerReviewEntity, ReviewId>
 {
 }

@@ -30,7 +30,7 @@ public sealed class CreateReviewCommandHandler(
 
         var user = userResult.Value;
 
-        var review = PartnerReview.Create(
+        var review = PartnerReviewEntity.Create(
             user?.UserName ?? string.Empty,
             user?.AvatarUrl ?? string.Empty,
             request.Rating,
@@ -87,9 +87,9 @@ public sealed class UpdateReviewCommandHandler(
 }
 
 public sealed class GetReviewByIdQueryHandler(IReviewRepository repository)
-    : GetByIdQueryHandler<GetReviewByIdQuery, PartnerReview, ReviewId, ReviewResponse>(repository)
+    : GetByIdQueryHandler<GetReviewByIdQuery, PartnerReviewEntity, ReviewId, ReviewResponse>(repository)
 {
-    protected override ReviewResponse MapToResponse(PartnerReview entity)
+    protected override ReviewResponse MapToResponse(PartnerReviewEntity entity)
     {
         return new ReviewResponse(
             entity.Id.Value,
@@ -104,13 +104,13 @@ public sealed class GetReviewByIdQueryHandler(IReviewRepository repository)
 }
 
 public sealed class GetAllReviewsQueryHandler(IReviewRepository repository)
-    : GetAllQueryHandler<GetAllReviewsQuery, PartnerReview, ReviewId, ReviewResponse>(repository)
+    : GetAllQueryHandler<GetAllReviewsQuery, PartnerReviewEntity, ReviewId, ReviewResponse>(repository)
 {
-    protected override IQueryable<PartnerReview> BuildQuery(GetAllReviewsQuery query)
+    protected override IQueryable<PartnerReviewEntity> BuildQuery(GetAllReviewsQuery query)
     {
         return Queryable;
     }
 }
 
 public sealed class DeleteReviewCommandHandler(IReviewRepository repository, IUnitOfWork unitOfWork)
-    : DeleteCommandHandler<DeleteReviewCommand, PartnerReview, ReviewId>(repository, unitOfWork);
+    : DeleteCommandHandler<DeleteReviewCommand, PartnerReviewEntity, ReviewId>(repository, unitOfWork);

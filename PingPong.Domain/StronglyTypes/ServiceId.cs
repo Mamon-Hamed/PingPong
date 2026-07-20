@@ -2,5 +2,5 @@
 
 public sealed record ServiceId(Guid Value) : StronglyTypedId(Value)
 {
-    public static ServiceId New() => new(Guid.NewGuid());
+    public static ServiceId New() => new(Guid.CreateVersion7());
 }

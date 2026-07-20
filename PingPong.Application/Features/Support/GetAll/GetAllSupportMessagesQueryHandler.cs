@@ -7,9 +7,9 @@ using PingPong.Domain.StronglyTypes;
 namespace PingPong.Application.Features.Support.GetAll;
 
 public sealed class GetAllSupportMessagesQueryHandler(ISupportRepository repository)
-    : GetAllQueryHandler<GetAllSupportMessagesQuery, SupportMessage, SupportId, SupportResponse>(repository)
+    : GetAllQueryHandler<GetAllSupportMessagesQuery, SupportMessageEntity, SupportId, SupportResponse>(repository)
 {
-    protected override IQueryable<SupportMessage> BuildQuery(GetAllSupportMessagesQuery query)
+    protected override IQueryable<SupportMessageEntity> BuildQuery(GetAllSupportMessagesQuery query)
     {
         return Queryable.FilterBase(query)
             .WhereIf(!string.IsNullOrEmpty(query.Name), s => s.Name.Contains(query.Name!))

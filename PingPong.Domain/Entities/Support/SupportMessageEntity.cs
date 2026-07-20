@@ -3,9 +3,9 @@ using PingPong.Domain.StronglyTypes;
 
 namespace PingPong.Domain.Entities.Support;
 
-public sealed class SupportMessage : Entity<SupportId>
+public sealed class SupportMessageEntity : Entity<SupportId>
 {
-    private SupportMessage(
+    private SupportMessageEntity(
         SupportId id,
         string name,
         string email,
@@ -21,7 +21,7 @@ public sealed class SupportMessage : Entity<SupportId>
         FromAuthenticated = fromAuthenticated;
     }
 
-    private SupportMessage()
+    private SupportMessageEntity()
     {
     }
 
@@ -31,14 +31,14 @@ public sealed class SupportMessage : Entity<SupportId>
     public string Message { get; private set; } = string.Empty;
     public bool FromAuthenticated { get; private set; }
 
-    public static SupportMessage Create(
+    public static SupportMessageEntity Create(
         string name,
         string email,
         SupportType type,
         string message,
         bool fromAuthenticated = false)
     {
-        return new SupportMessage(
+        return new SupportMessageEntity(
             SupportId.New(),
             name,
             email,

@@ -2,5 +2,5 @@
 
 public sealed record ReviewId(Guid Value) : StronglyTypedId(Value)
 {
-    public static ReviewId New() => new(Guid.NewGuid());
+    public static ReviewId New() => new(Guid.CreateVersion7());
 }

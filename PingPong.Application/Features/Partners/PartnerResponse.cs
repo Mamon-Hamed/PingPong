@@ -56,7 +56,10 @@ public record ServiceResponse(
     string Media,
     decimal Cost,
     double DiscountPercentage,
-    decimal CostAfterDiscount);
+    decimal CostAfterDiscount,
+    string CurrencyCode,
+    string CurrencySymbol,
+    decimal CurrencyRate);
 
 public record ReviewResponse(
     Guid Id,

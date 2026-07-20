@@ -16,6 +16,7 @@ internal sealed class PartnerConfiguration : BaseEntityConfiguration<PartnerEnti
 {
     protected override void ConfigureEntity(EntityTypeBuilder<PartnerEntity> builder)
     {
+        
         builder.Property(p => p.Name)
             .HasMaxLength(StringLengths.Length200)
             .IsRequired();
