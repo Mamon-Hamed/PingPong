@@ -61,6 +61,7 @@ public sealed class GetPartnersScrollQueryHandler(IPartnerRepository repository,
                 new LocationResponse(p.Location.Latitude, p.Location.Longitude, p.Location.City, p.Location.Country,
                     p.Location.Address),
                 p.Reviews.Count > 0 ? p.Reviews.Average(r => r.Rating) : 0,
+                p.Reviews.Count,
                 p.Services.Count > 0 && p.Services.Any(s => s.DiscountPercentage > 0)
                     ? "up to " + p.Services.Max(s => s.DiscountPercentage) + "%"
                     : "",

@@ -4,12 +4,16 @@ using PingPong.Application.Abstractions.Messaging;
 using PingPong.Domain.Repositories;
 using PingPong.Domain.StronglyTypes;
 using PingPong.Application.Common;
-
 using PingPong.Application.Abstractions.Authentication;
+using Cortex.Mediator;
+using PingPong.Domain.Events;
 
 namespace PingPong.Application.Features.Partners.GetById;
 
-public sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerRepository, ICurrentUserService currentUser)
+public sealed class GetPartnerByIdQueryHandler(
+    IPartnerRepository partnerRepository,
+    ICurrentUserService currentUser,
+    IMediator mediator)
     : IQueryHandler<GetPartnerByIdQuery, PartnerDetailsResponse>
 {
     public async Task<Result<PartnerDetailsResponse>> Handle(GetPartnerByIdQuery request, CancellationToken cancellationToken)
@@ -28,33 +32,11 @@ public sealed class GetPartnerByIdQueryHandler(IPartnerRepository partnerReposit
         // var isFavorite = currentUser.FavoritePartnerIds.Contains(partner.Id);
         // partner = partner with { IsFavorite = isFavorite };
 
-        var userLat = request.UserLatitude;
-        var userLon = request.UserLongitude;
-        
-        if (userLat == 0 && userLon == 0)
+      await Task.Run(async () =>
         {
-            return Result.Success(partner);
-        }
+            await mediator.PublishAsync(new PartnerViewedDomainEvent(partnerId), cancellationToken);
+        }, cancellationToken);
 
-        const double toRad = Math.PI / 180.0;
-        var lat1 = userLat * toRad;
-        var lon1 = userLon * toRad;
-        var lat2 = partner.Location.Latitude * toRad;
-        var lon2 = partner.Location.Longitude * toRad;
-
-        var distance = 6376500.0 * 2.0 * Math.Atan2(
-            Math.Sqrt(
-                Math.Pow(Math.Sin((lat2 - lat1) / 2.0), 2.0) +
-                Math.Cos(lat1) * Math.Cos(lat2) *
-                Math.Pow(Math.Sin((lon2 - lon1) / 2.0), 2.0)
-            ),
-            Math.Sqrt(1.0 - (
-                Math.Pow(Math.Sin((lat2 - lat1) / 2.0), 2.0) +
-                Math.Cos(lat1) * Math.Cos(lat2) *
-                Math.Pow(Math.Sin((lon2 - lon1) / 2.0), 2.0)
-            ))
-        );
-
-        return Result.Success(partner with { Distance = distance });
+        return Result.Success(partner with{Views = partner.Views + 1});
     }
 }

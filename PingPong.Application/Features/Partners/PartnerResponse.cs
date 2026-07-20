@@ -10,6 +10,7 @@ public record PartnerResponse(
     DateTime? ValidUntil,
     LocationResponse Location,
     double Rating,
+    int ReviewsCount,
     string DiscountText,
     bool isFavorite
 );
@@ -30,6 +31,7 @@ public record PartnerDetailsResponse(
     List<OpeningHourResponse> OpeningHours,
     List<ServiceResponse> Services,
     List<ReviewResponse> Reviews,
+    int ReviewsCount,
     double Rating,
     double Distance,
     string DiscountText,

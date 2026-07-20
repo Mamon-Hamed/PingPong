@@ -8,3 +8,5 @@ public sealed record PartnerCreatedDomainEvent(PartnerId PartnerId, string Name,
 public sealed record PartnerServiceUpdatedDomainEvent(PartnerId PartnerId, string PartnerName, ServiceId ServiceId, string ServiceName) : IDomainEvent;
 
 public sealed record GeneralNotificationAddedDomainEvent(string Title, string Message, string? ImageUrl) : IDomainEvent;
+
+public sealed record PartnerViewedDomainEvent(PartnerId PartnerId) : IDomainEvent;

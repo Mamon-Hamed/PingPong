@@ -44,6 +44,11 @@ public abstract class Repository<TEntity, TId>(AppDbContext dbContext) : IReposi
         return DbSet.AsNoTracking().AsQueryable();
     }
 
+    public IQueryable<TEntity> GetQueryable()
+    {
+        return DbSet.AsQueryable();
+    }
+
     public async Task<IReadOnlyList<TEntity>> FindAsync(
         Expression<Func<TEntity, bool>> predicate,
         CancellationToken cancellationToken = default)

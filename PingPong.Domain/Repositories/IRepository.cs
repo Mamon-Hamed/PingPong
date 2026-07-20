@@ -30,4 +30,5 @@ public interface IRepository<TEntity, in TId>
 
     void Remove(TEntity entity);
     IQueryable<TEntity> GetAsNoTrackingAsync();
+    IQueryable<TEntity> GetQueryable();
 }
